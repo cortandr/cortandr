@@ -5,6 +5,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import './fonts.css';
 
 const styles = {
     root: {
@@ -27,11 +28,12 @@ function Navigation(props) {
             <AppBar
                 position="fixed"
                 style={{
-                    background: 'transparent',
-                    opacity: 0.5,
-                    color: 'black',
-                    boxShadow: 'none'
-                }}>
+                    backgroundColor: '#F8F8F8',
+                    // opacity: 0.5,
+                    color: '#4885ed',
+                    boxShadow: 'none',
+                }}
+            >
                 <Toolbar>
                     <Typography
                         variant="h6"
@@ -40,7 +42,9 @@ function Navigation(props) {
                         Andrea Cortoni
                     </Typography>
                     <Button color={'inherit'}>About</Button>
-                    <Button color={'inherit'} style={{marginRight: 200}}>Work</Button>
+                    <Button color={'inherit'}>Resume</Button>
+                    <Button color={'inherit'} onClick={() => props.action()}>Work</Button>
+                    <Button color={'inherit'} style={{marginRight: 200}}>Contact</Button>
                 </Toolbar>
             </AppBar>
         </div>

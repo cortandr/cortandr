@@ -40,17 +40,19 @@ class Home extends React.Component{
 
 
     render() {
-        const work_list = ['mas', 'dots', 'viw'];
+        const work_list = ['mas', 'dots', 'dots'];
         return (
-            <Grid container justify={'center'} style={{overflowX: 'hidden'}}>
+            <Grid container justify={'center'}
+                  // style={{overflowX: 'hidden'}}
+            >
                 <Navigation action={this.scrollTo}/>
                 <Grid
                     container
                     justify={'center'}
-                    spacing={32}
+                    // spacing={32}
                     style={{
-                        backgroundColor: '#F8F8F8',
-                        minHeight: '100vh',
+                        backgroundColor: 'white',
+                        height: '100vh',
                         verticalAlign: 'middle',
                     }}>
                     <Grid item xs={5}>
@@ -91,24 +93,30 @@ class Home extends React.Component{
                         />
                     </Grid>
                 </Grid>
-                <Grid
-                    container
-                    alignItems={'flex-start'}
-                    className={'Work'}
-                    style={{marginTop: 20}}
-                    ref={(section) => { this.Work = section; }}>
-                    <Grid item xs={4}>
-                        <h1 style={{
-                            color: '#4885ed',
-                            fontSize: 40,
-                            textAlign: 'center'
-                        }}>
-                            Work</h1>
+                <Grid container
+                      style={{
+                          backgroundColor: '#F8F8F8',
+                          marginTop: 30
+                      }}
+                >
+                    <Grid
+                        container
+                        alignItems={'flex-start'}
+                        className={'Work'}
+                        ref={(section) => { this.Work = section; }}>
+                        <Grid item xs={4}>
+                            <h1 style={{
+                                color: '#4885ed',
+                                fontSize: 40,
+                                textAlign: 'center'
+                            }}>
+                                Work</h1>
+                        </Grid>
                     </Grid>
+                    {work_list.map((item, i) => {
+                        return <WorkItem key={i} name={item}/>
+                    })}
                 </Grid>
-                {work_list.map((item, i) => {
-                    return <WorkItem key={i} name={item}/>
-                })}
             </Grid>
         );
     };

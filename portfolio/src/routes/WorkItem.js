@@ -1,17 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import MASDRL from './masdrl.png';
+import DOTS from './dots.png';
 import Chip from '@material-ui/core/Chip';
-import scrollToComponent from 'react-scroll-to-component';
 
 const work = {
     mas: {
         title: "Deep Reinforcement Learning for Multi Agent Systems",
         description: "A deep reinforcement learning framework applied to Pursuer/Evader world. The policy to be learned " +
             "aims on taking a team of agents to the victory by catching a team of evaders.",
-        code: "",
+        code: "https://github.com/cortandr/MASRL",
+        img: MASDRL,
         more: ""
     },
 
@@ -19,6 +21,7 @@ const work = {
         title: "Deep Reinforcement Learning for Games",
         description: "Self play DQN algorithm aimed on learning how to play the game Dots and Boxes",
         code: "",
+        img: DOTS,
         more: ""
     },
 
@@ -60,15 +63,15 @@ class WorkItem extends React.Component{
     }
 
     render() {
-        const { classes } = this.props;
         return (
             <Grid container justify={'center'} style={{marginTop: 20}}>
                 <Grid item xs={5}>
                     <img
-                        src={MASDRL}
+                        src={work[this.state.work_name].img}
+                        // src={MASDRL}
                         alt={'work'}
-                        height={300}
-                        width={400}
+                        height={'auto'}
+                        width={'400'}
                         style={{
                             borderRadius: '1%',
                             opacity: 0.8,
@@ -92,15 +95,22 @@ class WorkItem extends React.Component{
                             <Chip
                                 label="Source Code"
                                 clickable
-                                style={{backgroundColor: '#4885ed', color: 'white'}}
+                                style={{
+                                    backgroundColor: '#4885ed',
+                                    borderColor: '#4885ed',
+                                    color: 'white'}}
                                 variant="outlined"
+                                onClick={() => window.location.href=work[this.state.work_name].code}
                             />
                         </Grid>
                         <Grid item>
                             <Chip
                                 label="More"
                                 clickable
-                                style={{backgroundColor: '#4885ed', color: 'white'}}
+                                style={{
+                                    backgroundColor: '#4885ed',
+                                    borderColor: '#4885ed',
+                                    color: 'white'}}
                                 variant="outlined"
                             />
                         </Grid>
@@ -115,4 +125,4 @@ WorkItem.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(WorkItem);
+export default withRouter(withStyles(styles)(WorkItem));

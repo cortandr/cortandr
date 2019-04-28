@@ -1,8 +1,8 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import Navigation from './Navigation';
-import Pic from './AC_PHOTO.jpg';
-import WorkItem from './WorkItem';
+import Navigation from './AuxComponents/Navigation';
+import Pic from './local_images/AC_PHOTO.jpg';
+import WorkItem from './AuxComponents/WorkItem';
 import scrollToComponent from 'react-scroll-to-component';
 import { MDBIcon, MDBContainer, MDBBtn } from 'mdbreact';
 import './fonts.css';

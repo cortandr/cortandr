@@ -1,6 +1,6 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import Navigation from './Navigation';
+import Navigation from './AuxComponents/Navigation';
 import { withRouter } from 'react-router-dom';
 import { MDBIcon, MDBContainer, MDBBtn } from 'mdbreact';
 import './fonts.css';

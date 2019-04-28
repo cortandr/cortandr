@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-import { withStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import MASDRL from './masdrl.png';
-import DOTS from './dots.png';
-import Chip from '@material-ui/core/Chip';
+import { withStyles } from '@material-ui/core/styles/index';
+import Grid from '@material-ui/core/Grid/index';
+import MASDRL from '../local_images/masdrl.png';
+import DOTS from '../local_images/dots.png';
+import Chip from '@material-ui/core/Chip/index';
 
 const work = {
     mas: {

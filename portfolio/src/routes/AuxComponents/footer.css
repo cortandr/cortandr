@@ -9,12 +9,18 @@
 .contact {
     font-size: 24px;
     font-family: 'Montserrat:100', sans-serif;
+    width: 400px;
     margin-top: 100px;
     text-align: center;
     color: #A9A9A9;
-    margin-left: 200px;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 .email {
     text-underline-style: single;
+}
+
+a {
+    color: #4885ed;
 }

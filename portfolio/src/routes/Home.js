@@ -43,7 +43,7 @@ class Home extends React.Component{
 
 
     render() {
-        const work_list = ['mas', 'dots', 'viw'];
+        const work_list = ['mas', 'dots', 'viw', 'MovieRec', 'SpeedPred'];
 
         return (
             <Grid container justify={'center'}

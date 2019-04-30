@@ -149,10 +149,14 @@ class Resume extends React.Component{
                         </Grid>
                     )
                 })}
-                <Grid container>
-                    <Grid item xs={6}>
-                        <Button>
-                            <a href='/AndreaCortoniCV.pdf' download>Click to download</a>
+                <Grid container justify={'center'} style={{marginTop: 50, textAlign: 'center'}}>
+                    <Grid item xs={3}>
+                        <Button style={{
+                            color: "white",
+                            backgroundColor: '#4885ed',
+                            textAlign: 'center'
+                        }}>
+                            Download PDF Version
                         </Button>
                     </Grid>
                 </Grid>

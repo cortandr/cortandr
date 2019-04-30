@@ -45,7 +45,7 @@ class Footer extends React.Component{
                   style={{
                       backgroundColor: '#F8F8F8',
                       height: 250,
-                      marginTop: 100
+                      marginTop: 50
                   }}
             >
                 <Grid item xs={6}>

@@ -6,6 +6,11 @@ import Grid from '@material-ui/core/Grid/index';
 import MASDRL from '../local_images/masdrl.png';
 import DOTS from '../local_images/dots.png';
 import Chip from '@material-ui/core/Chip/index';
+import Fade from '@material-ui/core/Fade';
+import IntersectionVisible    from 'react-intersection-visible';
+import Divider from '@material-ui/core/Divider';
+// require('intersection-observer');
+
 
 const work = {
     mas: {
@@ -28,6 +33,20 @@ const work = {
     viw: {
         title: "Viw",
         description: "Vi(m) plugin for Atom",
+        code: "",
+        more: ""
+    },
+
+    MovieRec: {
+        title: "Movies Recommendation System",
+        description: "An application built to recommend movies upon user input",
+        code: "",
+        more: ""
+    },
+
+    SpeedPred: {
+        title: "Speed Prediction",
+        description: "Machine Leaning algorithm to predict vehicle speed from dash-cam video",
         code: "",
         more: ""
     },
@@ -58,13 +77,15 @@ class WorkItem extends React.Component{
         super(props);
 
         this.state = {
+            visible: true,
             work_name: props.name
-        }
+        };
+
     }
 
     render() {
         return (
-            <Grid container justify={'center'} style={{marginTop: 20}}>
+            <Grid id={'item'} container justify={'center'} style={{marginTop: 30, marginBottom: 30}}>
                 <Grid item xs={5}>
                     <img
                         src={work[this.state.work_name].img}

@@ -1,11 +1,12 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Navigation from './AuxComponents/Navigation';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import { MDBIcon, MDBContainer, MDBBtn } from 'mdbreact';
 import './fonts.css';
 import Chip from "@material-ui/core/Chip";
 import Footer from './AuxComponents/Footer';
+import Button from '@material-ui/core/Button/index';
 
 const SocialButtonsPage = () => {
     return (
@@ -148,6 +149,13 @@ class Resume extends React.Component{
                         </Grid>
                     )
                 })}
+                <Grid container>
+                    <Grid item xs={6}>
+                        <Button>
+                            <a href='/AndreaCortoniCV.pdf' download>Click to download</a>
+                        </Button>
+                    </Grid>
+                </Grid>
                 <Footer/>
             </Grid>
         );

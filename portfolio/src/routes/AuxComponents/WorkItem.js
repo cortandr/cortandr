@@ -80,7 +80,7 @@ class WorkItem extends React.Component{
                     />
                 </Grid>
                 <Grid item xs={4}>
-                    <Grid container style={{marginTop: 60}}>
+                    <Grid container style={{marginTop: 10}}>
                         <Grid item>
                             <h3 style={{color: '#4885ed'}}>{work[this.state.work_name].title}</h3>
                         </Grid>

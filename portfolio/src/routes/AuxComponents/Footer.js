@@ -33,6 +33,12 @@ class Footer extends React.Component{
     }
 
     render() {
+
+        let date = new Date();
+        let month = date.toLocaleString('en-us', { month: 'long' });
+        let day = date.getDate();
+        let year = date.getFullYear();
+
         return (
             <Grid container
                   justify={'center'}
@@ -45,12 +51,12 @@ class Footer extends React.Component{
                 <Grid item xs={6}>
                     <p className={'contact'}>
                         If you want to get in touch send an email to
-                        <span className={'email'}> cortandr95@gmail.com</span>
+                        <span className={'email'}> <a href="mailto:cortandr95@gmail.com">cortandr95@gmail.com</a></span>
                     </p>
                 </Grid>
                 <Grid item xs={6}>
                     <p className={'update'}>
-                        Last updated on April 30th 2019
+                        Last updated on {month} {day}th {year}
                     </p>
                     <SocialMediaIcons
                         icons={socialMediaIcons}

@@ -5,6 +5,7 @@ import Pic from './local_images/AC_PHOTO.jpg';
 import WorkItem from './AuxComponents/WorkItem';
 import scrollToComponent from 'react-scroll-to-component';
 import Fade from '@material-ui/core/Fade';
+import Slide from '@material-ui/core/Slide';
 import './fonts.css';
 import SocialMediaIcons from "react-social-media-icons";
 import './AuxComponents/footer.css';
@@ -42,7 +43,8 @@ class Home extends React.Component{
 
 
     render() {
-        const work_list = ['mas', 'dots', 'dots'];
+        const work_list = ['mas', 'dots', 'viw'];
+
         return (
             <Grid container justify={'center'}
                   // style={{overflowX: 'hidden'}}
@@ -68,7 +70,7 @@ class Home extends React.Component{
                                         Ciao, I'm Andrea.</h1>
                                 </Fade>
                             </Grid>
-                            <Fade in timeout={1500}>
+                            <Fade in timeout={3000}>
                                 <Grid item>
                                     <p style={{
                                         fontSize: 20,
@@ -87,20 +89,26 @@ class Home extends React.Component{
                                 </Grid>
                             </Fade>
                         </Grid>
-                        <SocialMediaIcons
-                            icons={socialMediaIcons}
-                            iconSize={'1.3em'}
-                            iconColor={'#A9A9A9'}
-                        />
+                        <Fade in timeout={3000}>
+                            <div>
+                                <SocialMediaIcons
+                                    icons={socialMediaIcons}
+                                    iconSize={'1.3em'}
+                                    iconColor={'#A9A9A9'}
+                                />
+                            </div>
+                        </Fade>
                     </Grid>
                     <Grid item xs={3}>
-                        <img
-                            src={Pic}
-                            alt={'pic'}
-                            height={300}
-                            width={300}
-                            style={{borderRadius: '50%', marginTop: 250}}
-                        />
+                        <Fade in timeout={1000}>
+                            <img
+                                src={Pic}
+                                alt={'pic'}
+                                height={300}
+                                width={300}
+                                style={{borderRadius: '50%', marginTop: 250}}
+                            />
+                        </Fade>
                     </Grid>
                 </Grid>
                 <Grid container

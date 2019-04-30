@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 import { MDBIcon, MDBContainer, MDBBtn } from 'mdbreact';
 import './fonts.css';
 import Chip from "@material-ui/core/Chip";
+import Footer from './AuxComponents/Footer';
 
 const SocialButtonsPage = () => {
     return (
@@ -147,6 +148,7 @@ class Resume extends React.Component{
                         </Grid>
                     )
                 })}
+                <Footer/>
             </Grid>
         );
     };

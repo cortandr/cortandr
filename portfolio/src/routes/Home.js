@@ -5,11 +5,13 @@ import Pic from './local_images/AC_PHOTO.jpg';
 import WorkItem from './AuxComponents/WorkItem';
 import scrollToComponent from 'react-scroll-to-component';
 import Fade from '@material-ui/core/Fade';
-import Slide from '@material-ui/core/Slide';
+import Particles from 'react-particles-js';
 import './fonts.css';
 import SocialMediaIcons from "react-social-media-icons";
 import './AuxComponents/footer.css';
 import Footer from './AuxComponents/Footer';
+import ParticleAnimation from 'react-particle-animation'
+
 
 const socialMediaIcons = [
     {
@@ -46,18 +48,40 @@ class Home extends React.Component{
         const work_list = ['mas', 'dots', 'viw', 'MovieRec', 'SpeedPred'];
 
         return (
-            <Grid container justify={'center'}
-                  // style={{overflowX: 'hidden'}}
-            >
+            <Grid container justify={'center'}>
+                <div style={{width: '100%', height: '100vh', top: 0, left: 0, position: 'absolute'}}>
+                    <Particles
+                        params={{
+                            retina_detect: true,
+                            particles: {
+                                line_linked: {
+                                    enable: true,
+                                    distance: 150,
+                                    color: "#4885ed",
+                                    opacity: 0.4,
+                                    width: 1
+                                },
+                                number: {
+                                    value: 70
+                                },
+                                color: {
+                                    value: "#4885ed"
+                                },
+                                size: {
+                                    value: 3
+                                }
+                            }
+                        }}
+                    />
+                </div>
                 <Navigation action={this.scrollTo}/>
                 <Grid
                     container
                     justify={'center'}
-                    // spacing={32}
                     style={{
-                        backgroundColor: 'white',
                         height: '100vh',
                         verticalAlign: 'middle',
+                        position: 'relative'
                     }}>
                     <Grid item xs={5}>
                         <Grid container alignItems={'vertical'} style={{marginTop: 260}}>

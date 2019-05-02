@@ -48,7 +48,7 @@ class Navigation extends React.Component{
                         </Typography>
                         <Button color={'inherit'}>About</Button>
                         <Button color={'inherit'} onClick={() => this.props.history.push('/resume')}>Resume</Button>
-                        <Button color={'inherit'} onClick={() => this.props.action()}>Work</Button>
+                        <Button color={'inherit'} onClick={() => this.props.history.push('/projects')}>Projects</Button>
                         <Button color={'inherit'} style={{marginRight: 200}}>Contact</Button>
                     </Toolbar>
                 </AppBar>

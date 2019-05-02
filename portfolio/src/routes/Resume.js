@@ -7,22 +7,7 @@ import './fonts.css';
 import Chip from "@material-ui/core/Chip";
 import Footer from './AuxComponents/Footer';
 import Button from '@material-ui/core/Button/index';
-
-const SocialButtonsPage = () => {
-    return (
-        <MDBContainer>
-            <MDBBtn tag="a" floating social="tw">
-                <MDBIcon fab icon="twitter" />
-            </MDBBtn>
-            <MDBBtn tag="a" floating social="li">
-                <MDBIcon fab icon="linkedin-in" />
-            </MDBBtn>
-            <MDBBtn tag="a" floating social="git">
-                <MDBIcon fab icon="github" />
-            </MDBBtn>
-        </MDBContainer>
-    );
-};
+import Fade from '@material-ui/core/Fade';
 
 const experience = [
     {
@@ -84,69 +69,75 @@ class Resume extends React.Component{
 
     render() {
         return (
-            <Grid container justify={'center'}
-                  // style={{overflowX: 'hidden'}}
-            >
+            <Grid container justify={'center'}>
                 <Navigation/>
-                <Grid container justify={'center'} style={{marginTop: 80}}>
-                    <Grid item xs={12}>
-                        <h1 style={{color: '#4885ed', textAlign: 'center'}}>Experience</h1>
+                <Fade in timeout={1000}>
+                    <Grid container justify={'center'} style={{marginTop: 80}}>
+                        <Grid item xs={12}>
+                            <h1 style={{color: '#4885ed', textAlign: 'center'}}>Experience</h1>
+                        </Grid>
                     </Grid>
-                </Grid>
+                </Fade>
                 {experience.map((item, i) => {
                     return (
-                        <Grid container justify={'center'}>
-                            <Grid item xs={6}>
-                                <p style={{
-                                    textAlign: 'right',
-                                    marginTop: 60,
-                                    marginRight: 16
-                                }}>{item.date}</p>
+                        <Fade in timeout={(i+1) * 1500}>
+                            <Grid container justify={'center'}>
+                                <Grid item xs={6}>
+                                    <p style={{
+                                        textAlign: 'right',
+                                        marginTop: 60,
+                                        marginRight: 16
+                                    }}>{item.date}</p>
+                                </Grid>
+                                <Grid item xs={6}>
+                                    <h3 style={{color: '#4885ed'}}>{item.title}</h3>
+                                    <p style={{width: 500, textAlign: 'justify'}}>{item.description}</p>
+                                    <p>
+                                        {item.skills.map((s, i) => {
+                                            return (
+                                                <Chip
+                                                    label={s}
+                                                    clickable
+                                                    style={{
+                                                        marginRight: 5,
+                                                        height: 25,
+                                                        borderColor: '#4885ed',
+                                                        color: '#4885ed'
+                                                    }}
+                                                    variant="outlined"
+                                                />
+                                            )
+                                        })}
+                                    </p>
+                                </Grid>
                             </Grid>
-                            <Grid item xs={6}>
-                                <h3 style={{color: '#4885ed'}}>{item.title}</h3>
-                                <p style={{width: 500, textAlign: 'justify'}}>{item.description}</p>
-                                <p>
-                                    {item.skills.map((s, i) => {
-                                        return (
-                                            <Chip
-                                                label={s}
-                                                clickable
-                                                style={{
-                                                    marginRight: 5,
-                                                    height: 25,
-                                                    borderColor: '#4885ed',
-                                                    color: '#4885ed'
-                                                }}
-                                                variant="outlined"
-                                            />
-                                        )
-                                    })}
-                                </p>
-                            </Grid>
-                        </Grid>
+                        </Fade>
                     )
                 })}
-                <Grid container justify={'center'} style={{marginTop: 50}}>
-                    <Grid item xs={12}>
-                        <h1 style={{color: '#4885ed', textAlign: 'center'}}>Education</h1>
+                <Fade in timeout={5500}>
+                    <Grid container justify={'center'} style={{marginTop: 50}}>
+                        <Grid item xs={12}>
+                            <h1 style={{color: '#4885ed', textAlign: 'center'}}>Education</h1>
+                        </Grid>
                     </Grid>
-                </Grid>
+                </Fade>
                 {education.map((item, i) => {
                     return (
-                        <Grid container justify={'center'}>
-                            <Grid item xs={6}>
-                                <p style={{
-                                    textAlign: 'right',
-                                    marginTop: 40,
-                                    marginRight: 16
-                                }}>{item.date}</p>
+                        <Fade in timeout={(i+1)*1500}>
+                            <Grid container justify={'center'}>
+                                <Grid item xs={6}>
+                                    <p style={{
+                                        textAlign: 'right',
+                                        marginTop: 40,
+                                        marginRight: 16
+                                    }}>{item.date}</p>
+                                </Grid>
+                                <Grid item xs={6}>
+                                    <h3 style={{color: '#4885ed'}}>{item.title}</h3>
+                                    <p style={{width: 500, textAlign: 'justify'}}>{item.description}</p>
+                                </Grid>
                             </Grid>
-                            <Grid item xs={6}>
-                                <h3 style={{color: '#4885ed'}}>{item.title}</h3>
-                                <p style={{width: 500, textAlign: 'justify'}}>{item.description}</p>
-                            </Grid>
-                        </Grid>
+                        </Fade>
                     )
                 })}
                 <Grid container justify={'center'} style={{marginTop: 50, textAlign: 'center'}}>

@@ -1,0 +1,10 @@
+.about {
+    /*text-align: justify;*/
+    font-family: 'Montserrat', sans-serif, 'thin 100';
+    font-size: 22px;
+}
+
+h1 {
+    font-family: 'Montserrat:700', serif, 'bold 700';
+    color: #4885ed;
+}

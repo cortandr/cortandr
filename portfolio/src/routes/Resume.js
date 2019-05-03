@@ -2,7 +2,6 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Navigation from './AuxComponents/Navigation';
 import { withRouter, Link } from 'react-router-dom';
-import { MDBIcon, MDBContainer, MDBBtn } from 'mdbreact';
 import './fonts.css';
 import Chip from "@material-ui/core/Chip";
 import Footer from './AuxComponents/Footer';
@@ -80,7 +79,7 @@ class Resume extends React.Component{
                 </Fade>
                 {experience.map((item, i) => {
                     return (
-                        <Fade in timeout={(i+1) * 1500}>
+                        <Fade in timeout={(i+1) * 1000}>
                             <Grid container justify={'center'}>
                                 <Grid item xs={6}>
                                     <p style={{
@@ -97,12 +96,11 @@ class Resume extends React.Component{
                                             return (
                                                 <Chip
                                                     label={s}
-                                                    clickable
                                                     style={{
                                                         marginRight: 5,
                                                         height: 25,
                                                         borderColor: '#4885ed',
-                                                        color: '#4885ed'
+                                                        color: '#4885ed',
                                                     }}
                                                     variant="outlined"
                                                 />
@@ -114,7 +112,7 @@ class Resume extends React.Component{
                         </Fade>
                     )
                 })}
-                <Fade in timeout={5500}>
+                <Fade in timeout={4000}>
                     <Grid container justify={'center'} style={{marginTop: 50}}>
                         <Grid item xs={12}>
                             <h1 style={{color: '#4885ed', textAlign: 'center'}}>Education</h1>
@@ -123,7 +121,7 @@ class Resume extends React.Component{
                 </Fade>
                 {education.map((item, i) => {
                     return (
-                        <Fade in timeout={(i+1)*1500}>
+                        <Fade in timeout={(i+1)*1000}>
                             <Grid container justify={'center'}>
                                 <Grid item xs={6}>
                                     <p style={{

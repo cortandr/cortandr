@@ -19,41 +19,61 @@ import Fade from '@material-ui/core/Fade';
 
 const work = [
     [{
-        title: "Deep Reinforcement Learning for Multi Agent Systems",
+        title: "Deep Reinforcement Learning for MAS",
         description: "A deep reinforcement learning framework applied to Pursuer/Evader world. The policy to be learned " +
             "aims on taking a team of agents to the victory by catching a team of evaders.",
         code: "https://github.com/cortandr/MASRL",
         img: MASDRL,
-        more: ""
+        more: "/masdrl",
+        completed: 'Completed',
+        c: '#009b7d'
     },
 
     {
         title: "Deep Reinforcement Learning for Games",
-        description: "Self play DQN algorithm aimed on learning how to play the game Dots and Boxes",
+        description: "Self play DQN algorithm aimed on learning how to play the game Dots and Boxes.",
         code: "",
         img: DOTS,
-        more: ""
+        more: "",
+        completed: 'Completed',
+        c: '#009b7d'
     }],
     [{
         title: "Viw",
-        description: "Vi(m) plugin for Atom",
+        description: "Vi(m) plugin for Atom.",
         code: "",
-        more: ""
+        more: "",
+        completed: 'Completed',
+        c: '#009b7d'
     },
     {
         title: "Movies Recommendation System",
-        description: "An application built to recommend movies upon user input",
+        description: "An application built to recommend movies upon user input.",
         code: "",
         img: "",
-        more: ""
+        more: "",
+        completed: 'In - Progress',
+        c: '#4885ed'
     }],
     [{
         title: "Speed Prediction",
-        description: "Machine Leaning algorithm to predict vehicle speed from dash-cam video",
+        description: "Machine Leaning algorithm to predict vehicle speed from dash-cam video.",
         code: "",
         img: SPEED,
-        more: ""
-    }]
+        more: "",
+        completed: 'In - Progress',
+        c: '#4885ed'
+    },
+    {
+        title: "Sentiment Analysis",
+        description: "Deep Learning models applied to Ntural Language Processing for sentiment classification of Tweets.",
+        code: "",
+        img: "",
+        more: "",
+        completed: 'In - Progress',
+        c: '#4885ed'
+    }],
+
 ];
 
 class Projects extends React.Component{
@@ -82,7 +102,7 @@ class Projects extends React.Component{
                                             <Fade in timeout={(j+1)*1500}>
                                                 <Grid item xs={5}>
                                                     <Card style={{height: 400}}>
-                                                        <CardActionArea style={{height: 350}}>
+                                                        <div style={{height: 350}}>
                                                             <CardMedia
                                                                 style={{height: 180, width: 'auto'}}
                                                                 image={item.img}
@@ -92,16 +112,28 @@ class Projects extends React.Component{
                                                                 <Typography gutterBottom variant="h5" component="h2">
                                                                     {item.title}
                                                                 </Typography>
+                                                                <Typography gutterBottom
+                                                                            variant="p"
+                                                                            component="p"
+                                                                            style={{textAlign: 'right',
+                                                                                fontSize: 13
+                                                                            }}
+                                                                >
+                                                                    Completed : <span style={{color: item.c}}>{item.completed}</span>
+                                                                </Typography>
                                                                 <Typography component="p">
                                                                     {item.description}
                                                                 </Typography>
                                                             </CardContent>
-                                                        </CardActionArea>
+                                                        </div>
                                                         <CardActions>
                                                             <Button size="small" color="primary">
                                                                 Source Code
                                                             </Button>
-                                                            <Button size="small" color="primary">
+                                                            <Button size="small"
+                                                                    color="primary"
+                                                                    onClick={() => this.props.history.push(item.more)}
+                                                            >
                                                                 Learn More
                                                             </Button>
                                                         </CardActions>

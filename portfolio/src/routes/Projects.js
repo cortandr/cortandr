@@ -116,10 +116,12 @@ class Projects extends React.Component{
                                                                             variant="p"
                                                                             component="p"
                                                                             style={{textAlign: 'right',
-                                                                                fontSize: 13
+                                                                                fontSize: 13,
+                                                                                marginTop: 10,
+                                                                                marginBottom: 10
                                                                             }}
                                                                 >
-                                                                    Completed : <span style={{color: item.c}}>{item.completed}</span>
+                                                                    Status : <span style={{color: item.c}}>{item.completed}</span>
                                                                 </Typography>
                                                                 <Typography component="p">
                                                                     {item.description}

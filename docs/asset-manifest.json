@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/cortandr/static/css/main.40329f52.chunk.css",
+    "main.js": "/cortandr/static/js/main.185b86f0.chunk.js",
+    "main.js.map": "/cortandr/static/js/main.185b86f0.chunk.js.map",
+    "runtime~main.js": "/cortandr/static/js/runtime~main.b30d02d9.js",
+    "runtime~main.js.map": "/cortandr/static/js/runtime~main.b30d02d9.js.map",
+    "static/js/2.5fcac24c.chunk.js": "/cortandr/static/js/2.5fcac24c.chunk.js",
+    "static/js/2.5fcac24c.chunk.js.map": "/cortandr/static/js/2.5fcac24c.chunk.js.map",
+    "index.html": "/cortandr/index.html",
+    "precache-manifest.3fd78dc99634c884262d1252023c1c7a.js": "/cortandr/precache-manifest.3fd78dc99634c884262d1252023c1c7a.js",
+    "service-worker.js": "/cortandr/service-worker.js",
+    "static/css/main.40329f52.chunk.css.map": "/cortandr/static/css/main.40329f52.chunk.css.map",
+    "static/media/AC_PHOTO.jpg": "/cortandr/static/media/AC_PHOTO.f819f7c7.jpg",
+    "static/media/AndreaCortoniCV.pdf": "/cortandr/static/media/AndreaCortoniCV.b76a409d.pdf",
+    "static/media/RR.png": "/cortandr/static/media/RR.d9f00e2e.png",
+    "static/media/about_pic.JPG": "/cortandr/static/media/about_pic.5c30e5a6.JPG",
+    "static/media/dots.png": "/cortandr/static/media/dots.f1d9cdc5.png",
+    "static/media/masdrl.png": "/cortandr/static/media/masdrl.fc8f54a7.png",
+    "static/media/results1.png": "/cortandr/static/media/results1.d8b47c61.png",
+    "static/media/rewards.png": "/cortandr/static/media/rewards.64e75652.png",
+    "static/media/speed.jpg": "/cortandr/static/media/speed.56744508.jpg",
+    "static/media/state.png": "/cortandr/static/media/state.a8ac3032.png",
+    "static/media/vimatom.png": "/cortandr/static/media/vimatom.0500b75c.png"
+  }
+}

@@ -7,6 +7,7 @@ import Chip from "@material-ui/core/Chip";
 import Footer from './AuxComponents/Footer';
 import Button from '@material-ui/core/Button/index';
 import Fade from '@material-ui/core/Fade';
+import CV from './AndreaCortoniCV.pdf';
 
 const experience = [
     {
@@ -145,7 +146,7 @@ class Resume extends React.Component{
                             backgroundColor: '#4885ed',
                             textAlign: 'center'
                         }}>
-                            Download PDF Version
+                            <a href={CV} style={{color: "white", textDecoration: "none"}}>Download PDF Version</a>
                         </Button>
                     </Grid>
                 </Grid>

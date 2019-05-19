@@ -8,13 +8,13 @@ import MASDRL from "./local_images/masdrl.png";
 import DOTS from "./local_images/dots.png";
 import SPEED from "./local_images/speed.jpg";
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Fade from '@material-ui/core/Fade';
+import Viw from './local_images/vimatom.png';
 
 
 const work = [
@@ -34,21 +34,22 @@ const work = [
         description: "Self play DQN algorithm aimed on learning how to play the game Dots and Boxes.",
         code: "",
         img: DOTS,
-        more: "",
+        more: "/dots",
         completed: 'Completed',
         c: '#009b7d'
     }],
     [{
         title: "Viw",
         description: "Vi(m) plugin for Atom.",
+        img: Viw,
         code: "",
         more: "",
         completed: 'Completed',
         c: '#009b7d'
     },
     {
-        title: "Movies Recommendation System",
-        description: "An application built to recommend movies upon user input.",
+        title: "ImageAI",
+        description: "An application built to perform image analysis using state of the art deep learning techniques.",
         code: "",
         img: "",
         more: "",
@@ -66,11 +67,11 @@ const work = [
     },
     {
         title: "Sentiment Analysis",
-        description: "Deep Learning models applied to Ntural Language Processing for sentiment classification of Tweets.",
+        description: "Deep Learning models applied to Natural Language Processing for sentiment classification of Tweets.",
         code: "",
         img: "",
         more: "",
-        completed: 'In - Progress',
+        completed: 'Completed',
         c: '#4885ed'
     }],
 

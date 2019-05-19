@@ -1,9 +1,15 @@
 h1, h3 {
-    font-family: 'Montserrat:700', serif, 'bold 700';
+    /*font-family: 'Montserrat:700', serif, 'bold 700';*/
+    font-family: 'Roboto Slab', 'bold 700';
+}
+
+.maintitle {
+    font-family: 'Roboto Slab', 'bold 700';
 }
 
 p {
-    font-family: 'Montserrat', sans-serif, 'thin 100';
+    font-family: 'Roboto Slab', 'regular 400';
+    /*font-family: 'Yeon Sung', cursive;*/
 }
 
 .navText {

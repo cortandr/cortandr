@@ -146,7 +146,7 @@ class Resume extends React.Component{
                             backgroundColor: '#4885ed',
                             textAlign: 'center'
                         }}>
-                            <a href={CV} style={{color: "white", textDecoration: "none"}}>Download PDF Version</a>
+                            <a href={CV} rel="noopener noreferrer" target="_blank" style={{color: "white", textDecoration: "none"}}>Download PDF Version</a>
                         </Button>
                     </Grid>
                 </Grid>

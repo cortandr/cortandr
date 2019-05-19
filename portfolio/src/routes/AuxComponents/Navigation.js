@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography/index';
 import Button from '@material-ui/core/Button/index';
 import '../fonts.css';
 import {withRouter} from "react-router-dom";
+import './navigation.css';
 
 const styles = {
     root: {
@@ -46,10 +47,12 @@ class Navigation extends React.Component{
                         >
                             Andrea Cortoni
                         </Typography>
-                        <Button color={'inherit'} onClick={() => this.props.history.push('/about')}>About</Button>
-                        <Button color={'inherit'} onClick={() => this.props.history.push('/resume')}>Resume</Button>
-                        <Button color={'inherit'} onClick={() => this.props.history.push('/projects')}>Projects</Button>
-                        <Button color={'inherit'} style={{marginRight: 200}}>Contact</Button>
+                        <Button className={'navtext'} color={'inherit'} onClick={() => this.props.history.push('/about')}>About</Button>
+                        <Button className={'navtext'} color={'inherit'} onClick={() => this.props.history.push('/resume')}>Resume</Button>
+                        <Button className={'navtext'}
+                                color={'inherit'}
+                                style={{marginRight: 200}}
+                                onClick={() => this.props.history.push('/projects')}>Projects</Button>
                     </Toolbar>
                 </AppBar>
             </div>

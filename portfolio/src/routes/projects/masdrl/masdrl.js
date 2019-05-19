@@ -7,6 +7,7 @@ import Fade from '@material-ui/core/Fade';
 import STATE from './state.png';
 import RR from './RR.png';
 import REWARDS from './rewards.png';
+import './masdrl.css';
 
  const rewards = [
      {

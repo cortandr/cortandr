@@ -1,0 +1,10 @@
+.navtitle {
+    font-family: 'Roboto Slab', 'bold 700';
+    flex-grow: 1;
+    margin-left: 200px;
+    cursor: pointer;
+}
+
+.navtext {
+    font-family: 'Roboto Slab', 'regular 400'
+}

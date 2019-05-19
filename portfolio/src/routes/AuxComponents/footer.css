@@ -3,14 +3,22 @@
     font-family: 'Montserrat', sans-serif, 'thin 100';
     color: #A9A9A9;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 80px;
+}
+
+.copyright {
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif, 'thin 100';
+    color: #A9A9A9;
+    text-align: center;
+    margin-top: 60px;
 }
 
 .contact {
     font-size: 24px;
     font-family: 'Montserrat:100', sans-serif;
     width: 400px;
-    margin-top: 100px;
+    margin-top: 80px;
     text-align: center;
     color: #A9A9A9;
     margin-left: 100px;

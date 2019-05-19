@@ -164,6 +164,28 @@ class DOTSBOXES extends React.Component{
                             </Grid>
                         </Grid>
                     </Fade>
+                    <Grid container justify={'center'} style={{marginTop: 30}}>
+                        <Grid item xs={12}>
+                            <h1 style={{color: '#4885ed'}}>
+                                TO-DO
+                            </h1>
+                        </Grid>
+                    </Grid>
+                    <Grid container>
+                        <Grid item>
+                            <ul>
+                                <li>
+                                    Test RL Agent against more advanced Naive opponents
+                                </li>
+                                <li>
+                                    Extend Model Architecture
+                                </li>
+                                <li>
+                                    Design and Build new UI
+                                </li>
+                            </ul>
+                        </Grid>
+                    </Grid>
                 </Grid>
                 <Footer/>
             </Grid>

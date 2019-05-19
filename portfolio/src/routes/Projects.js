@@ -15,6 +15,9 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Fade from '@material-ui/core/Fade';
 import Viw from './local_images/vimatom.png';
+import Sentiment from './local_images/sentiment.jpg';
+import ImageAI from './local_images/imageai.png';
+import CV from "./AndreaCortoniCV.pdf";
 
 
 const work = [
@@ -26,7 +29,9 @@ const work = [
         img: MASDRL,
         more: "/masdrl",
         completed: 'Completed',
-        c: '#009b7d'
+        c: '#009b7d',
+        code_active: true,
+        more_active: true
     },
 
     {
@@ -36,25 +41,31 @@ const work = [
         img: DOTS,
         more: "/dots",
         completed: 'Completed',
-        c: '#009b7d'
+        c: '#009b7d',
+        code_active: false,
+        more_active: true
     }],
     [{
         title: "Viw",
         description: "Vi(m) plugin for Atom.",
         img: Viw,
-        code: "",
+        code: "https://github.com/cortandr/Viw",
         more: "",
         completed: 'Completed',
-        c: '#009b7d'
+        c: '#009b7d',
+        code_active: true,
+        more_active: false
     },
     {
         title: "ImageAI",
         description: "An application built to perform image analysis using state of the art deep learning techniques.",
         code: "",
-        img: "",
+        img: ImageAI,
         more: "",
         completed: 'In - Progress',
-        c: '#4885ed'
+        c: '#4885ed',
+        code_active: false,
+        more_active: false
     }],
     [{
         title: "Speed Prediction",
@@ -63,16 +74,20 @@ const work = [
         img: SPEED,
         more: "",
         completed: 'In - Progress',
-        c: '#4885ed'
+        c: '#4885ed',
+        code_active: false,
+        more_active: false
     },
     {
         title: "Sentiment Analysis",
         description: "Deep Learning models applied to Natural Language Processing for sentiment classification of Tweets.",
-        code: "",
-        img: "",
+        code: "https://github.com/cortandr/SentimentAnalysis",
+        img: Sentiment,
         more: "",
         completed: 'Completed',
-        c: '#4885ed'
+        c: '#4885ed',
+        code_active: true,
+        more_active: false
     }],
 
 ];
@@ -130,12 +145,19 @@ class Projects extends React.Component{
                                                             </CardContent>
                                                         </div>
                                                         <CardActions>
-                                                            <Button size="small" color="primary">
-                                                                Source Code
+                                                            <Button size="small" style={{color: '#4885ed'}} disabled={!item.code_active}>
+                                                                <a
+                                                                    href={item.code}
+                                                                    rel="noopener noreferrer"
+                                                                    target="_blank"
+                                                                    style={{color: "#4885ed", textDecoration: "none"}}>
+                                                                    Source Code
+                                                                </a>
                                                             </Button>
                                                             <Button size="small"
-                                                                    color="primary"
+                                                                    style={{color: '#4885ed'}}
                                                                     onClick={() => this.props.history.push(item.more)}
+                                                                    disabled={!item.more_active}
                                                             >
                                                                 Learn More
                                                             </Button>

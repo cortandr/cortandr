@@ -1,12 +1,5 @@
-.about {
-    /*text-align: justify;*/
-    font-family: 'Roboto Slab', 'regular 400';
-    font-size: 22px;
-}
-
 h1, h3 {
     font-family: 'Roboto Slab', 'bold 700';
-    color: #4885ed;
 }
 
 .maintitle {

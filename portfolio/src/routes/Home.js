@@ -15,11 +15,11 @@ const socialMediaIcons = [
         className: 'fa-github',
     },
     {
-        url: 'https://gitlab.com/andrewgbliss',
+        url: 'https://www.linkedin.com/in/andrea-cortoni-8a9b74116/',
         className: 'fa-linkedin',
     },
     {
-        url: 'https://www.npmjs.com/~andrewgbliss',
+        url: 'https://twitter.com/Cortandr',
         className: 'fa-twitter',
     },
 ];
@@ -77,14 +77,17 @@ class Home extends React.Component{
                     style={{
                         height: '100vh',
                         verticalAlign: 'middle',
-                        position: 'relative'
+                        position: 'relative',
+                        marginLeft: '200px', marginRight: '200px'
                     }}>
                     <Grid container justify={'center'}>
-                        <Grid item xs={5}>
+                        <Grid item xs={8} style={{textAlign: 'left'}}>
                             <Grid container alignItems={'vertical'} style={{marginTop: 260}}>
                                 <Grid item style={{height: 70}}>
                                     <Fade in timeout={1000}>
-                                        <h1 style={{
+                                        <h1
+                                            className={'maintitle'}
+                                            style={{
                                             color: '#4885ed',
                                             fontSize: 40,
                                         }}>
@@ -120,14 +123,18 @@ class Home extends React.Component{
                                 </div>
                             </Fade>
                         </Grid>
-                        <Grid item xs={3}>
+                        <Grid item xs={4}>
                             <Fade in timeout={1000}>
                                 <img
                                     src={Pic}
                                     alt={'pic'}
                                     height={300}
                                     width={300}
-                                    style={{borderRadius: '50%', marginTop: 250}}
+                                    style={{
+                                        borderRadius: '50%',
+                                        marginTop: 250,
+                                        marginLeft: 20
+                                    }}
                                 />
                             </Fade>
                         </Grid>

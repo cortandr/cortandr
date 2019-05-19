@@ -11,7 +11,7 @@ import DOTSBOXES from './routes/projects/dots/dots';
 function App() {
     return (
         <Grid container justify={'center'}>
-            <Router>
+            <Router basename={'portfolio'}>
                 <Route exact path="/" component={Home} />
                 <Route path="/resume" component={Resume} />
                 <Route path="/projects" component={Projects} />

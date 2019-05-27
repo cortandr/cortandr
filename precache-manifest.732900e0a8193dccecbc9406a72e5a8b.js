@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "972423ecf2a68a241f914d25202da684",
+    "revision": "5716bd9380157a413674b987e05a0f94",
     "url": "/portfolio/index.html"
   },
   {
-    "revision": "fde6ee7e8283312368b3",
-    "url": "/portfolio/static/css/main.94ea9a30.chunk.css"
+    "revision": "2d76ede82df86691370a",
+    "url": "/portfolio/static/css/main.9c591e3c.chunk.css"
   },
   {
-    "revision": "fbcac4234ba8a30378fb",
-    "url": "/portfolio/static/js/2.ef7fbade.chunk.js"
+    "revision": "d795b1dc03ff1dc63833",
+    "url": "/portfolio/static/js/2.d6ae41f7.chunk.js"
   },
   {
-    "revision": "fde6ee7e8283312368b3",
-    "url": "/portfolio/static/js/main.2aa3bee0.chunk.js"
+    "revision": "2d76ede82df86691370a",
+    "url": "/portfolio/static/js/main.bb43af36.chunk.js"
   },
   {
     "revision": "53ebc025fca807d4dbea",
@@ -26,6 +26,30 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "b76a409d93e1b6a44b1c8f44ca74f789",
     "url": "/portfolio/static/media/AndreaCortoniCV.b76a409d.pdf"
+  },
+  {
+    "revision": "4f8d41cfdfc415f5f61ff7187fbafb99",
+    "url": "/portfolio/static/media/IMG_1104.4f8d41cf.JPG"
+  },
+  {
+    "revision": "405ddc57b279d5cbb146ae8b85207aea",
+    "url": "/portfolio/static/media/IMG_1177.405ddc57.JPG"
+  },
+  {
+    "revision": "3f216d36494020e45a707b02a84e7c6d",
+    "url": "/portfolio/static/media/IMG_4425.3f216d36.JPG"
+  },
+  {
+    "revision": "0df6183077ea28a690dc9ddf15b07adf",
+    "url": "/portfolio/static/media/IMG_4433.0df61830.JPG"
+  },
+  {
+    "revision": "abda2862159d9d757877d1f863921e46",
+    "url": "/portfolio/static/media/IMG_4585.abda2862.JPG"
+  },
+  {
+    "revision": "cc6abd2597b14e9be5132d4197ff68a4",
+    "url": "/portfolio/static/media/IMG_4946.cc6abd25.JPG"
   },
   {
     "revision": "d9f00e2e6f52d58a56ed56f7e9b8fdca",

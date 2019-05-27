@@ -21,8 +21,8 @@ const styles = theme => ({
         backgroundColor: theme.palette.background.paper,
     },
     gridList: {
-        width: 500,
-        height: 450,
+        width: 1300,
+        height: 600,
     },
 });
 
@@ -32,32 +32,32 @@ const photos = [
         img: pic1,
         // title: 'Image',
         // author: 'author',
-        cols: 2,
+        cols: 3,
     },
     {
         img: pic2,
         // title: 'Image',
         // author: 'author',
-        cols: 2,
+        cols: 3,
     },
     {
         img: pic3,
         // title: 'Image',
         // author: 'author',
-        cols: 2,
+        cols: 3,
     },
     {
         img: pic4,
         // title: 'Image',
         // author: 'author',
-        cols: 2,
+        cols: 3,
     },
     {
         img: pic5,
         // title: 'Image',
         // author: 'author',
-        cols: 2,
-    },
+        cols: 3,
+    }
 ];
 
 
@@ -74,7 +74,7 @@ class Photos extends React.Component{
         const classes = this.props.classes;
 
         return (
-            <Grid container justify={'center'} style={{marginTop: 100, backgroundColor: '#f9fbfd'}}>
+            <Grid container justify={'center'} style={{marginTop: 20, backgroundColor: 'white'}}>
                 <Fade in timeout={1000}>
                     <Grid container justify={'center'} style={{marginTop: 20, marginBottom: 30}}>
                         <Grid item xs={12}>
@@ -83,11 +83,11 @@ class Photos extends React.Component{
                     </Grid>
                 </Fade>
                 <Grid container justify={'center'} style={{marginRight: 100, marginLeft: 100}}>
-                    <Grid item xs={8}>
+                    <Grid item xs={11}>
                         <div className={classes.root}>
-                            <GridList cellHeight={160} className={classes.gridList} cols={3}>
-                                {photos.map((tile, i) => (
-                                    <GridListTile key={tile.img} cols={tile.cols || 1}>
+                            <GridList cellHeight={300} className={classes.gridList} cols={3}>
+                                {photos.map(tile => (
+                                    <GridListTile key={tile.img} cols={tile.cols || 1} style={{height: 500}}>
                                         <img src={tile.img} alt={'pic'} />
                                     </GridListTile>
                                 ))}
@@ -100,5 +100,5 @@ class Photos extends React.Component{
     };
 }
 
-export default withStyles(Photos);
+export default withStyles(styles)(Photos);
 

@@ -163,29 +163,31 @@ class About extends React.Component{
                         </Grid>
                     </Grid>
                 </Grid>
-                <Fade in timeout={1000}>
-                    <Grid container justify={'center'} style={{marginTop: 10, marginBottom: 30}}>
-                        <Grid item xs={12}>
-                            <h1 style={{color: '#4885ed', textAlign: 'center'}}>Adventures</h1>
+                <Recommendations/>
+                <Grid container justify={'center'} style={{backgroundColor: '#f9fbfd'}}>
+                    <Fade in timeout={1000}>
+                        <Grid container justify={'center'} style={{marginTop: 20, marginBottom: 30}}>
+                            <Grid item xs={12}>
+                                <h1 style={{color: '#4885ed', textAlign: 'center'}}>Adventures</h1>
+                            </Grid>
+                        </Grid>
+                    </Fade>
+                    <Grid container justify={'center'} style={{marginRight: 50, marginLeft: 50, marginBottom: 30}}>
+                        <Grid container justify={'center'} spacing={32}>
+                            {youtube.map((v, i) => {
+                                return (
+                                    <Grid item>
+                                        <YouTube
+                                            videoId={v.id}
+                                            opts={opts}
+                                            onReady={this._onReady}
+                                        />
+                                    </Grid>
+                                )
+                            })}
                         </Grid>
                     </Grid>
-                </Fade>
-                <Grid container justify={'center'} style={{marginRight: 50, marginLeft: 50}}>
-                    <Grid container justify={'center'} spacing={32}>
-                        {youtube.map((v, i) => {
-                            return (
-                                <Grid item>
-                                    <YouTube
-                                        videoId={v.id}
-                                        opts={opts}
-                                        onReady={this._onReady}
-                                    />
-                                </Grid>
-                            )
-                        })}
-                    </Grid>
                 </Grid>
-                <Recommendations/>
                 <Photos/>
                 <Footer/>
             </Grid>

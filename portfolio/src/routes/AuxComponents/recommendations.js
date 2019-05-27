@@ -37,7 +37,7 @@ class Recommendations extends React.Component{
     render() {
 
         return (
-            <Grid container justify={'center'} style={{marginTop: 100, backgroundColor: '#f9fbfd'}}>
+            <Grid container justify={'center'} style={{marginTop: 10, backgroundColor: 'white'}}>
                 <Fade in timeout={1000}>
                     <Grid container justify={'center'} style={{marginTop: 20, marginBottom: 30}}>
                         <Grid item xs={12}>

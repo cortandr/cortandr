@@ -7,7 +7,7 @@ import Chip from "@material-ui/core/Chip";
 import Footer from './AuxComponents/Footer';
 import Button from '@material-ui/core/Button/index';
 import Fade from '@material-ui/core/Fade';
-import CV from './AndreaCortoniCV.pdf';
+import CV from './files/AndreaCortoniCV.pdf';
 
 const experience = [
     {
@@ -72,7 +72,7 @@ class Resume extends React.Component{
             <Grid container justify={'center'}>
                 <Navigation/>
                 <Fade in timeout={1000}>
-                    <Grid container justify={'center'} style={{marginTop: 80}}>
+                    <Grid container justify={'center'} style={{marginTop: 80, marginBottom: 50}}>
                         <Grid item xs={12}>
                             <h1 style={{color: '#4885ed', textAlign: 'center'}}>Experience</h1>
                         </Grid>
@@ -85,12 +85,12 @@ class Resume extends React.Component{
                                 <Grid item xs={6}>
                                     <p style={{
                                         textAlign: 'right',
-                                        marginTop: 60,
+                                        marginTop: 50,
                                         marginRight: 16
                                     }}>{item.date}</p>
                                 </Grid>
                                 <Grid item xs={6}>
-                                    <h3 style={{color: '#4885ed'}}>{item.title}</h3>
+                                    <h4 style={{color: '#4885ed'}}>{item.title}</h4>
                                     <p style={{width: 500, textAlign: 'justify'}}>{item.description}</p>
                                     <p>
                                         {item.skills.map((s, i) => {
@@ -114,7 +114,7 @@ class Resume extends React.Component{
                     )
                 })}
                 <Fade in timeout={4000}>
-                    <Grid container justify={'center'} style={{marginTop: 50}}>
+                    <Grid container justify={'center'} style={{marginTop: 50, marginBottom: 50}}>
                         <Grid item xs={12}>
                             <h1 style={{color: '#4885ed', textAlign: 'center'}}>Education</h1>
                         </Grid>
@@ -127,12 +127,12 @@ class Resume extends React.Component{
                                 <Grid item xs={6}>
                                     <p style={{
                                         textAlign: 'right',
-                                        marginTop: 40,
+                                        marginTop: 20,
                                         marginRight: 16
                                     }}>{item.date}</p>
                                 </Grid>
                                 <Grid item xs={6}>
-                                    <h3 style={{color: '#4885ed'}}>{item.title}</h3>
+                                    <h4 style={{color: '#4885ed'}}>{item.title}</h4>
                                     <p style={{width: 500, textAlign: 'justify'}}>{item.description}</p>
                                 </Grid>
                             </Grid>

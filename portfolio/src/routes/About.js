@@ -12,6 +12,8 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import Card from "@material-ui/core/Card";
 import YouTube from 'react-youtube';
+import Recommendations from './AuxComponents/recommendations';
+import Photos from './AuxComponents/photo_gallery';
 
 
 const youtube = [
@@ -77,19 +79,19 @@ class About extends React.Component{
                         </Grid>
                     </Grid>
                 </Fade>
-                <Grid container justify={'center'} style={{marginTop: 50}}>
+                <Grid container justify={'center'} style={{marginTop: 50, marginRight: 100, marginLeft: 100}}>
                     <Grid item xs={5}>
                         <Fade in timeout={1000}>
                             <img
                                 src={ABOUT}
                                 alt={'about_pic'}
-                                height={500}
+                                height={400}
                                 width={'auto'}
                                 style={{borderRadius: '3%', boxShadow: '3px 3px 3px 3px #F8F8F8'}}
                             />
                         </Fade>
                     </Grid>
-                    <Grid item xs={4}>
+                    <Grid item xs={4} style={{marginTop: 50}}>
                         <Fade in timeout={1000}>
                             <p className={'about'}>
                                 Currently pursuing a Master of Science in Artificial Intelligence at KU Leuven, Belgium.
@@ -106,53 +108,59 @@ class About extends React.Component{
                         </Fade>
                     </Grid>
                 </Grid>
-                <Grid container justify={'center'} style={{backgroundColor: '#f9fbfd', marginTop: 80, height: 600}}>
-                    <Fade in timeout={1000}>
-                        <Grid container justify={'center'} style={{marginTop: 10}}>
-                            <Grid item xs={12}>
-                                <h1 style={{color: '#4885ed', textAlign: 'center'}}>Skills</h1>
-                            </Grid>
-                        </Grid>
-                    </Fade>
-                    <Grid container justify={'center'}
-                          style={{marginTop: 10, marginRight: 100, marginLeft: 100}}
-                          spacing={32}
-                    >
-                        {skills.map((item, i) => {
-                            return (
-                                <Grid item xs={4}>
-                                    <Fade in timeout={1000}>
-                                        <Card style={{height: 400, borderRadius: '4%'}}>
-                                            <CardContent style={{textAlign: 'center'}}>
-                                                <Typography variant="h5" component="h2" style={{color: '#4885ed'}}>
-                                                    {item.title}
-                                                </Typography>
-                                                {item.list.map((s, k) => {
-                                                    // return <p>{s}</p>
-                                                    return (
-                                                        <Grid container justify={"center"} style={{marginTop: 10}}>
-                                                            <Grid item xs={12}>
-                                                                <Chip
-                                                                    label={s}
-                                                                    style={{
-                                                                        textAlign: 'center',
-                                                                        marginRight: 5,
-                                                                        height: 25,
-                                                                        borderColor: '#4885ed',
-                                                                        color: '#4885ed',
-                                                                        fontWeight: 'bold'
-                                                                    }}
-                                                                    variant="outlined"/>
-                                                            </Grid>
-                                                        </Grid>
-                                                    )
-                                                })}
-                                            </CardContent>
-                                        </Card>
-                                    </Fade>
+                <Grid container justify={'center'}
+                      style={{
+                          backgroundColor: '#f9fbfd',
+                          marginTop: 80,
+                          height: 600}}>
+                    <Grid container justify={'center'} style={{marginRight: 50, marginLeft: 50}}>
+                        <Fade in timeout={1000}>
+                            <Grid container justify={'center'} style={{marginTop: 20}}>
+                                <Grid item xs={12}>
+                                    <h1 style={{color: '#4885ed', textAlign: 'center'}}>Skills</h1>
                                 </Grid>
-                            )
-                        })}
+                            </Grid>
+                        </Fade>
+                        <Grid container justify={'center'}
+                              style={{marginRight: 50, marginLeft: 50}}
+                              spacing={32}
+                        >
+                            {skills.map((item, i) => {
+                                return (
+                                    <Grid item xs={4}>
+                                        <Fade in timeout={1000}>
+                                            <Card style={{height: 400, borderRadius: '4%'}}>
+                                                <CardContent style={{textAlign: 'center'}}>
+                                                    <Typography variant="h5" component="h2" style={{color: '#4885ed'}}>
+                                                        {item.title}
+                                                    </Typography>
+                                                    {item.list.map((s, k) => {
+                                                        // return <p>{s}</p>
+                                                        return (
+                                                            <Grid container justify={"center"} style={{marginTop: 10}}>
+                                                                <Grid item xs={12}>
+                                                                    <Chip
+                                                                        label={s}
+                                                                        style={{
+                                                                            textAlign: 'center',
+                                                                            marginRight: 5,
+                                                                            height: 25,
+                                                                            borderColor: '#4885ed',
+                                                                            color: '#4885ed',
+                                                                            fontWeight: 'bold'
+                                                                        }}
+                                                                        variant="outlined"/>
+                                                                </Grid>
+                                                            </Grid>
+                                                        )
+                                                    })}
+                                                </CardContent>
+                                            </Card>
+                                        </Fade>
+                                    </Grid>
+                                )
+                            })}
+                        </Grid>
                     </Grid>
                 </Grid>
                 <Fade in timeout={1000}>
@@ -162,19 +170,23 @@ class About extends React.Component{
                         </Grid>
                     </Grid>
                 </Fade>
-                <Grid container justify={'center'} spacing={32}>
-                    {youtube.map((v, i) => {
-                        return (
-                            <Grid item>
-                                <YouTube
-                                    videoId={v.id}
-                                    opts={opts}
-                                    onReady={this._onReady}
-                                />
-                            </Grid>
-                        )
-                    })}
+                <Grid container justify={'center'} style={{marginRight: 50, marginLeft: 50}}>
+                    <Grid container justify={'center'} spacing={32}>
+                        {youtube.map((v, i) => {
+                            return (
+                                <Grid item>
+                                    <YouTube
+                                        videoId={v.id}
+                                        opts={opts}
+                                        onReady={this._onReady}
+                                    />
+                                </Grid>
+                            )
+                        })}
+                    </Grid>
                 </Grid>
+                <Recommendations/>
+                <Photos/>
                 <Footer/>
             </Grid>
         );

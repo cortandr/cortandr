@@ -1,7 +1,7 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Navigation from './AuxComponents/Navigation';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import './fonts.css';
 import Footer from './AuxComponents/Footer';
 import MASDRL from "./local_images/masdrl.png";
@@ -17,7 +17,6 @@ import Fade from '@material-ui/core/Fade';
 import Viw from './local_images/vimatom.png';
 import Sentiment from './local_images/sentiment.jpg';
 import ImageAI from './local_images/imageai.png';
-import CV from "./AndreaCortoniCV.pdf";
 
 
 const work = [

@@ -122,9 +122,9 @@ class MAS extends React.Component{
                             {rewards.map((reward, i) => {
                                 return (
                                     <Grid item xs={4}>
-                                        <h3 style={{textAlign: 'center'}}>
+                                        <h4 style={{textAlign: 'center', color: '#4885ed', marginBottom: 20}}>
                                             {reward.name}
-                                        </h3>
+                                        </h4>
                                         <p style={{textAlign: 'center'}}>
                                             {reward.info}
                                             {reward.image !== "" ? (

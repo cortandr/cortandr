@@ -3,6 +3,8 @@ import Grid from '@material-ui/core/Grid';
 import React from 'react';
 import './recommendations.css';
 import Fade from "@material-ui/core/Fade";
+import ScrollAnimation from 'react-animate-on-scroll';
+
 
 
 const recs = [
@@ -41,35 +43,39 @@ class Recommendations extends React.Component{
                 <Fade in timeout={1000}>
                     <Grid container justify={'center'} style={{marginTop: 20, marginBottom: 30}}>
                         <Grid item xs={12}>
-                            <h1 style={{color: '#4885ed', textAlign: 'center'}}>What people say about me</h1>
+                            <ScrollAnimation animateIn={'flipInX'}>
+                                <h1 style={{color: '#4885ed', textAlign: 'center'}}>What people say about me</h1>
+                            </ScrollAnimation>
                         </Grid>
                     </Grid>
                 </Fade>
                 <Grid container justify={'center'} style={{marginRight: 100, marginLeft: 100}}>
                     <Grid item xs={8}>
-                        <Carousel style={{height: 300, marginTop: 30}}
-                                  prevIcon={<span aria-hidden="true" className="carousel-control-prev-icon" />}
-                        >
-                            {recs.map((r, i) => {
-                                return (
-                                    <Carousel.Item key={i} style={{height: 280}}>
-                                        <Grid container justify={'center'}>
-                                            <Grid item xs={8}>
-                                                <p className={'snap'}>"{r.rec}"</p>
-                                            </Grid>
-                                        </Grid>
-                                        <Carousel.Caption style={{marginTop: 70}}>
+                        <ScrollAnimation animateIn={'bounceInUp'}>
+                            <Carousel style={{height: 300, marginTop: 30}}
+                                      prevIcon={<span aria-hidden="true" className="carousel-control-prev-icon" />}
+                            >
+                                {recs.map((r, i) => {
+                                    return (
+                                        <Carousel.Item key={i} style={{height: 280}}>
                                             <Grid container justify={'center'}>
                                                 <Grid item xs={8}>
-                                                    <h5 style={{color: '#4885ed'}}>{r.person}</h5>
-                                                    <p style={{color: 'black'}}>{r.description} - <span><a href={r.link}>full version</a></span></p>
+                                                    <p className={'snap'}>"{r.rec}"</p>
                                                 </Grid>
                                             </Grid>
-                                        </Carousel.Caption>
-                                    </Carousel.Item>
-                                )
-                            })}
-                        </Carousel>
+                                            <Carousel.Caption style={{marginTop: 70}}>
+                                                <Grid container justify={'center'}>
+                                                    <Grid item xs={8}>
+                                                        <h5 style={{color: '#4885ed'}}>{r.person}</h5>
+                                                        <p style={{color: 'black'}}>{r.description} - <span><a href={r.link}>full version</a></span></p>
+                                                    </Grid>
+                                                </Grid>
+                                            </Carousel.Caption>
+                                        </Carousel.Item>
+                                    )
+                                })}
+                            </Carousel>
+                        </ScrollAnimation>
                     </Grid>
                 </Grid>
             </Grid>

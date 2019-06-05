@@ -1,16 +1,16 @@
 import Grid from '@material-ui/core/Grid';
 import React from 'react';
 import './recommendations.css';
-import Fade from "@material-ui/core/Fade";
 import pic1 from './images/IMG_4946.JPG';
 import pic2 from './images/IMG_1104.JPG';
 import pic3 from './images/IMG_1177.JPG';
 import pic4 from './images/IMG_4425.JPG';
 import pic5 from './images/IMG_4433.JPG';
-import pic6 from './images/IMG_4585.JPG';
 import { withStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
+import ScrollAnimation from 'react-animate-on-scroll';
+
 
 const styles = theme => ({
     root: {
@@ -75,24 +75,26 @@ class Photos extends React.Component{
 
         return (
             <Grid container justify={'center'} style={{marginTop: 20, backgroundColor: 'white'}}>
-                <Fade in timeout={1000}>
-                    <Grid container justify={'center'} style={{marginTop: 20, marginBottom: 30}}>
-                        <Grid item xs={12}>
+                <Grid container justify={'center'} style={{marginTop: 20, marginBottom: 30}}>
+                    <Grid item xs={12}>
+                        <ScrollAnimation animateIn={'flipInX'} animateOut={'fadeOut'}>
                             <h1 style={{color: '#4885ed', textAlign: 'center'}}>Photography</h1>
-                        </Grid>
+                        </ScrollAnimation>
                     </Grid>
-                </Fade>
+                </Grid>
                 <Grid container justify={'center'} style={{marginRight: 100, marginLeft: 100}}>
                     <Grid item xs={11}>
-                        <div className={classes.root}>
-                            <GridList cellHeight={300} className={classes.gridList} cols={3}>
-                                {photos.map(tile => (
-                                    <GridListTile key={tile.img} cols={tile.cols || 1} style={{height: 500}}>
-                                        <img src={tile.img} alt={'pic'} />
-                                    </GridListTile>
-                                ))}
-                            </GridList>
-                        </div>
+                        <ScrollAnimation animateIn={'fadeIn'} animateOut={'fadeOut'}>
+                            <div className={classes.root}>
+                                <GridList cellHeight={300} className={classes.gridList} cols={3}>
+                                    {photos.map(tile => (
+                                        <GridListTile key={tile.img} cols={tile.cols || 1} style={{height: 500}}>
+                                            <img src={tile.img} alt={'pic'} />
+                                        </GridListTile>
+                                    ))}
+                                </GridList>
+                            </div>
+                        </ScrollAnimation>
                     </Grid>
                 </Grid>
             </Grid>

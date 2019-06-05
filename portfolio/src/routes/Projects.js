@@ -17,6 +17,7 @@ import Fade from '@material-ui/core/Fade';
 import Viw from './local_images/vimatom.png';
 import Sentiment from './local_images/sentiment.jpg';
 import ImageAI from './local_images/imageai.png';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 
 const work = [
@@ -30,7 +31,8 @@ const work = [
         completed: 'Completed',
         c: '#009b7d',
         code_active: true,
-        more_active: true
+        more_active: true,
+        animation_type: 'bounceInLeft'
     },
 
     {
@@ -42,7 +44,8 @@ const work = [
         completed: 'Completed',
         c: '#009b7d',
         code_active: false,
-        more_active: true
+        more_active: true,
+        animation_type: 'bounceInRight'
     }],
     [{
         title: "Viw",
@@ -53,7 +56,8 @@ const work = [
         completed: 'Completed',
         c: '#009b7d',
         code_active: true,
-        more_active: false
+        more_active: false,
+        animation_type: 'bounceInLeft'
     },
     {
         title: "ImageAI",
@@ -64,7 +68,8 @@ const work = [
         completed: 'In - Progress',
         c: '#4885ed',
         code_active: false,
-        more_active: false
+        more_active: false,
+        animation_type: 'bounceInRight'
     }],
     [{
         title: "Speed Prediction",
@@ -75,7 +80,8 @@ const work = [
         completed: 'In - Progress',
         c: '#4885ed',
         code_active: false,
-        more_active: false
+        more_active: false,
+        animation_type: 'bounceInLeft'
     },
     {
         title: "Sentiment Analysis",
@@ -86,7 +92,8 @@ const work = [
         completed: 'Completed',
         c: '#4885ed',
         code_active: true,
-        more_active: false
+        more_active: false,
+        animation_type: 'bounceInRight'
     }],
 
 ];
@@ -100,74 +107,72 @@ class Projects extends React.Component{
         return (
             <Grid container justify={'center'}>
                 <Navigation/>
-                <Fade in timeout={1000}>
-                    <Grid container justify={'center'} style={{marginTop: 80}}>
-                        <Grid item xs={12}>
+                <Grid container justify={'center'} style={{paddingTop: 80}}>
+                    <Grid item xs={12}>
+                        <Fade in>
                             <h1 style={{color: '#4885ed', textAlign: 'center'}}>Projects</h1>
-                        </Grid>
+                        </Fade>
                     </Grid>
-                </Fade>
+                </Grid>
                 <Grid container style={{marginRight: 100, marginLeft: 100}}>
                     {work.map((row, i) => {
                         return (
-                            <Fade in timeout={(i+1)*2000}>
-                                <Grid container justify={'center'} style={{marginTop: 20}} spacing={32}>
-                                    {row.map((item, j) => {
-                                        return (
-                                            <Fade in timeout={(j+1)*1500}>
-                                                <Grid item xs={5}>
-                                                    <Card style={{height: 400}}>
-                                                        <div style={{height: 350}}>
-                                                            <CardMedia
-                                                                style={{height: 180, width: 'auto'}}
-                                                                image={item.img}
-                                                                title={item.title}
-                                                            />
-                                                            <CardContent>
-                                                                <Typography gutterBottom variant="h5" component="h2">
-                                                                    {item.title}
-                                                                </Typography>
-                                                                <Typography gutterBottom
-                                                                            variant="p"
-                                                                            component="p"
-                                                                            style={{textAlign: 'right',
-                                                                                fontSize: 13,
-                                                                                marginTop: 10,
-                                                                                marginBottom: 10
-                                                                            }}
-                                                                >
-                                                                    Status : <span style={{color: item.c}}>{item.completed}</span>
-                                                                </Typography>
-                                                                <Typography component="p">
-                                                                    {item.description}
-                                                                </Typography>
-                                                            </CardContent>
-                                                        </div>
-                                                        <CardActions>
-                                                            <Button size="small" style={{color: '#4885ed'}} disabled={!item.code_active}>
-                                                                <a
-                                                                    href={item.code}
-                                                                    rel="noopener noreferrer"
-                                                                    target="_blank"
-                                                                    style={{color: "#4885ed", textDecoration: "none"}}>
-                                                                    Source Code
-                                                                </a>
-                                                            </Button>
-                                                            <Button size="small"
-                                                                    style={{color: '#4885ed'}}
-                                                                    onClick={() => this.props.history.push(item.more)}
-                                                                    disabled={!item.more_active}
+                            <Grid container justify={'center'} style={{marginTop: 20}} spacing={32}>
+                                {row.map((item, j) => {
+                                    return (
+                                        <Grid item xs={5}>
+                                            <ScrollAnimation animateIn={item.animation_type} animateOnce>
+                                                <Card style={{height: 400}}>
+                                                    <div style={{height: 350}}>
+                                                        <CardMedia
+                                                            style={{height: 180, width: 'auto'}}
+                                                            image={item.img}
+                                                            title={item.title}
+                                                        />
+                                                        <CardContent>
+                                                            <Typography gutterBottom variant="h5" component="h2">
+                                                                {item.title}
+                                                            </Typography>
+                                                            <Typography gutterBottom
+                                                                        variant="p"
+                                                                        component="p"
+                                                                        style={{textAlign: 'right',
+                                                                            fontSize: 13,
+                                                                            marginTop: 10,
+                                                                            marginBottom: 10
+                                                                        }}
                                                             >
-                                                                Learn More
-                                                            </Button>
-                                                        </CardActions>
-                                                    </Card>
-                                                </Grid>
-                                            </Fade>
-                                        )
-                                    })}
-                                </Grid>
-                            </Fade>
+                                                                Status : <span style={{color: item.c}}>{item.completed}</span>
+                                                            </Typography>
+                                                            <Typography component="p">
+                                                                {item.description}
+                                                            </Typography>
+                                                        </CardContent>
+                                                    </div>
+                                                    <CardActions>
+                                                        <Button size="small" style={{color: '#4885ed'}} disabled={!item.code_active}>
+                                                            <a
+                                                                href={item.code}
+                                                                rel="noopener noreferrer"
+                                                                target="_blank"
+                                                                style={{color: "#4885ed", textDecoration: "none"}}>
+                                                                Source Code
+                                                            </a>
+                                                        </Button>
+                                                        <Button size="small"
+                                                                style={{color: '#4885ed'}}
+                                                                onClick={() => this.props.history.push(item.more)}
+                                                                disabled={!item.more_active}
+                                                        >
+                                                            Learn More
+                                                        </Button>
+                                                    </CardActions>
+                                                </Card>
+                                            </ScrollAnimation>
+                                        </Grid>
+                                    )
+                                })}
+                            </Grid>
                         )
                     })}
                 </Grid>

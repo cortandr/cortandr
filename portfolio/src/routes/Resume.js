@@ -8,6 +8,11 @@ import Footer from './AuxComponents/Footer';
 import Button from '@material-ui/core/Button/index';
 import Fade from '@material-ui/core/Fade';
 import CV from './files/AndreaCortoniCV.pdf';
+import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
+import WorkIcon from '@material-ui/icons/Work';
+import EducationIcon from '@material-ui/icons/School';
+import './resume.css';
 
 const experience = [
     {
@@ -49,17 +54,17 @@ const education = [
             "KU Leuven, Leuven, Belgium."
     },
     {
+        date: "2015-2016",
+        title:  "Bachelor of Science in Information Technology Engineering",
+        description:
+            "Tongji University, Shanghai, China."
+    },
+    {
         date: "2014-2017",
         title:  "Bachelor of Science in Electronic Engineering",
         description:
             "Polytechnic of Turin, Turin, Italy."
     },
-    {
-        date: "2015-2016",
-        title:  "Bachelor of Science in Information Technology Engineering",
-        description:
-            "Tongji University, Shanghai, China."
-    }
 ];
 
 class Resume extends React.Component{
@@ -69,7 +74,7 @@ class Resume extends React.Component{
 
     render() {
         return (
-            <Grid container justify={'center'}>
+            <Grid container justify={'center'} style={{backgroundColor: '#f9fbfd'}}>
                 <Navigation/>
                 <Fade in timeout={1000}>
                     <Grid container justify={'center'} style={{marginTop: 80, marginBottom: 50}}>
@@ -78,67 +83,62 @@ class Resume extends React.Component{
                         </Grid>
                     </Grid>
                 </Fade>
-                {experience.map((item, i) => {
-                    return (
-                        <Fade in timeout={(i+1) * 1000}>
-                            <Grid container justify={'center'}>
-                                <Grid item xs={6}>
-                                    <p style={{
-                                        textAlign: 'right',
-                                        marginTop: 50,
-                                        marginRight: 16
-                                    }}>{item.date}</p>
-                                </Grid>
-                                <Grid item xs={6}>
-                                    <h4 style={{color: '#4885ed'}}>{item.title}</h4>
-                                    <p style={{width: 500, textAlign: 'justify'}}>{item.description}</p>
-                                    <p>
-                                        {item.skills.map((s, i) => {
-                                            return (
-                                                <Chip
-                                                    label={s}
-                                                    style={{
-                                                        marginRight: 5,
-                                                        height: 25,
-                                                        borderColor: '#4885ed',
-                                                        color: '#4885ed',
-                                                    }}
-                                                    variant="outlined"
-                                                />
-                                            )
-                                        })}
-                                    </p>
-                                </Grid>
-                            </Grid>
-                        </Fade>
-                    )
-                })}
-                <Fade in timeout={4000}>
-                    <Grid container justify={'center'} style={{marginTop: 50, marginBottom: 50}}>
+                <VerticalTimeline>
+                    {experience.map((item, i) => {
+                        return (
+                            <VerticalTimelineElement
+                                className="vertical-timeline-element--work content-type-work"
+                                date={item.date}
+                                iconStyle={{ background: '#4885ed', color: '#fff' }}
+                                icon={<WorkIcon />}
+                            >
+                                <h4 className="vertical-timeline-element-title">{item.title}</h4>
+                                {item.skills.map((s, j) => {
+                                    return (
+                                        <Chip
+                                            label={s}
+                                            style={{
+                                                marginRight: 5,
+                                                height: 20,
+                                                borderColor: '#4885ed',
+                                                color: '#4885ed',
+                                                fontSize: 10
+                                            }}
+                                            variant="outlined"
+                                        />
+                                    )
+                                })}
+                                <p style={{fontSize: 12}}>
+                                    {item.description}
+                                </p>
+                            </VerticalTimelineElement>
+                        )
+                    })}
+                </VerticalTimeline>
+                <Fade in timeout={1000}>
+                    <Grid container justify={'center'} style={{marginTop: 80, marginBottom: 50}}>
                         <Grid item xs={12}>
                             <h1 style={{color: '#4885ed', textAlign: 'center'}}>Education</h1>
                         </Grid>
                     </Grid>
                 </Fade>
-                {education.map((item, i) => {
-                    return (
-                        <Fade in timeout={(i+1)*1000}>
-                            <Grid container justify={'center'}>
-                                <Grid item xs={6}>
-                                    <p style={{
-                                        textAlign: 'right',
-                                        marginTop: 20,
-                                        marginRight: 16
-                                    }}>{item.date}</p>
-                                </Grid>
-                                <Grid item xs={6}>
-                                    <h4 style={{color: '#4885ed'}}>{item.title}</h4>
-                                    <p style={{width: 500, textAlign: 'justify'}}>{item.description}</p>
-                                </Grid>
-                            </Grid>
-                        </Fade>
-                    )
-                })}
+                <VerticalTimeline>
+                    {education.map((item, i) => {
+                        return (
+                            <VerticalTimelineElement
+                                className="vertical-timeline-element--education, content-type-edu"
+                                date={item.date}
+                                iconStyle={{ background: '#4885ed', color: '#fff' }}
+                                icon={<EducationIcon />}
+                            >
+                                <h4 className="vertical-timeline-element-title">{item.title}</h4>
+                                <p style={{fontSize: 12}}>
+                                    {item.description}
+                                </p>
+                            </VerticalTimelineElement>
+                        )
+                    })}
+                </VerticalTimeline>
                 <Grid container justify={'center'} style={{marginTop: 50, textAlign: 'center'}}>
                     <Grid item xs={3}>
                         <Button style={{

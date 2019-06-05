@@ -3,11 +3,11 @@ import Grid from '@material-ui/core/Grid';
 import Navigation from './AuxComponents/Navigation';
 import Pic from './local_images/AC_PHOTO.jpg';
 import scrollToComponent from 'react-scroll-to-component';
-import Fade from '@material-ui/core/Fade';
 import Particles from 'react-particles-js';
 import './fonts.css';
 import SocialMediaIcons from "react-social-media-icons";
 import './AuxComponents/footer.css';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 const socialMediaIcons = [
     {
@@ -83,8 +83,8 @@ class Home extends React.Component{
                     <Grid container justify={'center'}>
                         <Grid item xs={8} style={{textAlign: 'left'}}>
                             <Grid container alignItems={'vertical'} style={{marginTop: 260}}>
-                                <Grid item style={{height: 70}}>
-                                    <Fade in timeout={1000}>
+                                <Grid item style={{height: 70, marginTop: 30}}>
+                                    <ScrollAnimation animateIn={'flipInX'}>
                                         <h1
                                             className={'maintitle'}
                                             style={{
@@ -92,28 +92,30 @@ class Home extends React.Component{
                                             fontSize: 40,
                                         }}>
                                             Ciao, I'm Andrea.</h1>
-                                    </Fade>
+                                    </ScrollAnimation>
                                 </Grid>
-                                <Fade in timeout={3000}>
-                                    <Grid item>
-                                        <p style={{
-                                            fontSize: 20,
-                                        }}>
-                                            I'm a Software Engineer with a strong passion for Machine Learning and its incredible potential.
-                                        </p>
-                                        <p style={{
-                                            fontSize: 15,
-                                        }}>
-                                            Former Software Engineering Intern at
-                                            <span style={{fontSize: 20, color: '#cc0000'}}> TESLA </span>,
-                                            <span style={{fontSize: 20, color: '#006699'}}> IBM</span>,
-                                            embedded software developer at
-                                            <span style={{fontSize: 20, color: '#8FD1F7'}}> ISMB</span>.
-                                        </p>
-                                    </Grid>
-                                </Fade>
+                                <Grid item>
+                                    <ScrollAnimation animateIn={'flipInX'}>
+                                    <p style={{
+                                        fontSize: 20,
+                                    }}>
+                                        I'm a Software Engineer with a strong passion for Machine Learning and its incredible potential.
+                                    </p>
+                                    </ScrollAnimation>
+                                    <ScrollAnimation animateIn={'flipInX'}>
+                                    <p style={{
+                                        fontSize: 15,
+                                    }}>
+                                        Former Software Engineering Intern at
+                                        <span style={{fontSize: 20, color: '#cc0000'}}> TESLA </span>,
+                                        <span style={{fontSize: 20, color: '#006699'}}> IBM</span>,
+                                        embedded software developer at
+                                        <span style={{fontSize: 20, color: '#8FD1F7'}}> ISMB</span>.
+                                    </p>
+                                    </ScrollAnimation>
+                                </Grid>
                             </Grid>
-                            <Fade in timeout={3000}>
+                            <ScrollAnimation animateIn={'flipInX'}>
                                 <div>
                                     <SocialMediaIcons
                                         icons={socialMediaIcons}
@@ -121,10 +123,10 @@ class Home extends React.Component{
                                         iconColor={'#A9A9A9'}
                                     />
                                 </div>
-                            </Fade>
+                            </ScrollAnimation>
                         </Grid>
                         <Grid item xs={4}>
-                            <Fade in timeout={1000}>
+                            <ScrollAnimation animateIn={'zoomIn'}>
                                 <img
                                     src={Pic}
                                     alt={'pic'}
@@ -136,7 +138,7 @@ class Home extends React.Component{
                                         marginLeft: 20
                                     }}
                                 />
-                            </Fade>
+                            </ScrollAnimation>
                         </Grid>
                     </Grid>
                     <Grid container justify={'center'} style={{height: 10}}>

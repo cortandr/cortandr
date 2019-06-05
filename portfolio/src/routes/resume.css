@@ -1,0 +1,23 @@
+.vertical-timeline-element-date {
+    /*text-align: center;*/
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.vertical-timeline-element-content {
+    border-top: solid 5px;
+    border-top-color: #4885ed;
+}
+
+
+h4 {
+    color: #4885ed;
+}
+
+.vertical-timeline-element-title {
+    margin-bottom: 20px;
+}
+
+.vertical-timeline {
+    mso-shadow-color: black;
+}

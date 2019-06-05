@@ -18,6 +18,7 @@ import Viw from './local_images/vimatom.png';
 import Sentiment from './local_images/sentiment.jpg';
 import ImageAI from './local_images/imageai.png';
 import ScrollAnimation from 'react-animate-on-scroll';
+import Tooltip from '@material-ui/core/Tooltip';
 
 
 const work = [
@@ -32,68 +33,80 @@ const work = [
         c: '#009b7d',
         code_active: true,
         more_active: true,
-        animation_type: 'bounceInLeft'
+        animation_type: 'bounceInLeft',
+        code_tooltip: "Code",
+        more_tooltip: "More"
     },
 
     {
         title: "Deep Reinforcement Learning for Games",
         description: "Self play DQN algorithm aimed on learning how to play the game Dots and Boxes.",
-        code: "",
+        code: "#",
         img: DOTS,
         more: "/dots",
         completed: 'Completed',
         c: '#009b7d',
-        code_active: false,
+        code_active: true,
         more_active: true,
-        animation_type: 'bounceInRight'
+        animation_type: 'bounceInRight',
+        code_tooltip: "Coming Soon",
+        more_tooltip: "More"
     }],
     [{
         title: "Viw",
         description: "Vi(m) plugin for Atom.",
         img: Viw,
         code: "https://github.com/cortandr/Viw",
-        more: "",
+        more: "#",
         completed: 'Completed',
         c: '#009b7d',
         code_active: true,
-        more_active: false,
-        animation_type: 'bounceInLeft'
+        more_active: true,
+        animation_type: 'bounceInLeft',
+        code_tooltip: "Coming Soon",
+        more_tooltip: "Coming Soon"
     },
     {
         title: "ImageAI",
         description: "An application built to perform image analysis using state of the art deep learning techniques.",
-        code: "",
+        code: "#",
         img: ImageAI,
-        more: "",
+        more: "#",
         completed: 'In - Progress',
         c: '#4885ed',
-        code_active: false,
-        more_active: false,
-        animation_type: 'bounceInRight'
+        code_active: true,
+        more_active: true,
+        animation_type: 'bounceInRight',
+        code_tooltip: "Coming Soon",
+        more_tooltip: "Coming Soon"
     }],
     [{
         title: "Speed Prediction",
         description: "Machine Leaning algorithm to predict vehicle speed from dash-cam video.",
-        code: "",
+        code: "#",
         img: SPEED,
-        more: "",
+        more: "#",
         completed: 'In - Progress',
         c: '#4885ed',
-        code_active: false,
-        more_active: false,
-        animation_type: 'bounceInLeft'
+        code_active: true,
+        more_active: true,
+        animation_type: 'bounceInLeft',
+        code_tooltip: "Coming Soon",
+        more_tooltip: "Coming Soon"
     },
     {
         title: "Sentiment Analysis",
         description: "Deep Learning models applied to Natural Language Processing for sentiment classification of Tweets.",
         code: "https://github.com/cortandr/SentimentAnalysis",
         img: Sentiment,
-        more: "",
+        more: "#",
         completed: 'Completed',
-        c: '#4885ed',
+        c: '#009b7d',
         code_active: true,
-        more_active: false,
-        animation_type: 'bounceInRight'
+        more_active: true,
+        animation_type: 'bounceInRight',
+        code_tooltip: "Code",
+        more_tooltip: "Coming Soon"
     }],
 
 ];
@@ -150,22 +163,26 @@ class Projects extends React.Component{
                                                         </CardContent>
                                                     </div>
                                                     <CardActions>
-                                                        <Button size="small" style={{color: '#4885ed'}} disabled={!item.code_active}>
-                                                            <a
-                                                                href={item.code}
-                                                                rel="noopener noreferrer"
-                                                                target="_blank"
-                                                                style={{color: "#4885ed", textDecoration: "none"}}>
-                                                                Source Code
-                                                            </a>
-                                                        </Button>
-                                                        <Button size="small"
-                                                                style={{color: '#4885ed'}}
-                                                                onClick={() => this.props.history.push(item.more)}
-                                                                disabled={!item.more_active}
-                                                        >
-                                                            Learn More
-                                                        </Button>
+                                                        <Tooltip title={item.code_tooltip}>
+                                                            <Button size="small" style={{color: '#4885ed'}} disabled={!item.code_active}>
+                                                                <a
+                                                                    href={item.code}
+                                                                    rel="noopener noreferrer"
+                                                                    target="_blank"
+                                                                    style={{color: "#4885ed", textDecoration: "none"}}>
+                                                                    Source Code
+                                                                </a>
+                                                            </Button>
+                                                        </Tooltip>
+                                                        <Tooltip title={item.more_tooltip}>
+                                                            <Button size="small"
+                                                                    style={{color: '#4885ed'}}
+                                                                    onClick={() => this.props.history.push(item.more)}
+                                                                    disabled={!item.more_active}
+                                                            >
+                                                                Learn More
+                                                            </Button>
+                                                        </Tooltip>
                                                     </CardActions>
                                                 </Card>
                                             </ScrollAnimation>

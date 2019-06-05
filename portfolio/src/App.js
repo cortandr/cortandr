@@ -7,6 +7,7 @@ import Projects from './routes/Projects';
 import About from './routes/About';
 import MAS from './routes/projects/masdrl/masdrl';
 import DOTSBOXES from './routes/projects/dots/dots';
+import ImageAI from './routes/projects/imageAI/ImageAI';
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                 <Route path="/about" component={About} />
                 <Route path="/masdrl" component={MAS} />
                 <Route path="/dots" component={DOTSBOXES} />
+                <Route path="/imageai" component={ImageAI} />
             </Router>
         </Grid>
     );

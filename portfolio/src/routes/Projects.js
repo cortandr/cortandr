@@ -18,7 +18,7 @@ import Viw from './local_images/vimatom.png';
 import Sentiment from './local_images/sentiment.jpg';
 import ImageAI from './local_images/imageai.png';
 import ScrollAnimation from 'react-animate-on-scroll';
-import Tooltip from '@material-ui/core/Tooltip';
+import Chip from "@material-ui/core/Chip";
 
 
 const work = [
@@ -35,13 +35,14 @@ const work = [
         more_active: true,
         animation_type: 'bounceInLeft',
         code_tooltip: "Code",
-        more_tooltip: "More"
+        more_tooltip: "More",
+        tags: ['Reinforcement Learning', 'Multi-Agent Systems', 'Residual Networks', 'CNN', 'Keras']
     },
 
     {
         title: "Deep Reinforcement Learning for Games",
         description: "Self play DQN algorithm aimed on learning how to play the game Dots and Boxes.",
-        code: "#",
+        code: "https://github.com/cortandr/DotsAndBoxes_DeepRL",
         img: DOTS,
         more: "/dots",
         completed: 'Completed',
@@ -50,35 +51,41 @@ const work = [
         more_active: true,
         animation_type: 'bounceInRight',
         code_tooltip: "Coming Soon",
-        more_tooltip: "More"
+        more_tooltip: "More",
+        tags: ['Reinforcement Learning', 'Self Play', 'CNN', 'Tensorflow', 'DQN']
     }],
     [{
         title: "Viw",
         description: "Vi(m) plugin for Atom.",
         img: Viw,
         code: "https://github.com/cortandr/Viw",
-        more: "#",
+        more: "/viw",
         completed: 'Completed',
         c: '#009b7d',
         code_active: true,
         more_active: true,
         animation_type: 'bounceInLeft',
         code_tooltip: "Coming Soon",
-        more_tooltip: "Coming Soon"
+        more_tooltip: "More",
+        tags: ['Scala', 'Vim', 'FP', 'OOP']
     },
     {
         title: "ImageAI",
         description: "An application built to perform image analysis using state of the art deep learning techniques.",
-        code: "#",
+        code: "",
         img: ImageAI,
-        more: "#",
+        more: "",
         completed: 'In - Progress',
         c: '#4885ed',
-        code_active: true,
-        more_active: true,
+        code_active: false,
+        more_active: false,
         animation_type: 'bounceInRight',
         code_tooltip: "Coming Soon",
-        more_tooltip: "Coming Soon"
+        more_tooltip: "Coming Soon",
+        tags: [
+            'Computer Vision', 'Classification', 'Segmentation', 'Detection', 'Keras',
+            'Residual Networks', 'Skip Connections', 'YOLO', 'React', 'Django'
+        ]
     }],
     [{
         title: "Speed Prediction",
@@ -88,11 +95,10 @@ const work = [
         more: "#",
         completed: 'In - Progress',
         c: '#4885ed',
-        code_active: true,
-        more_active: true,
+        code_active: false,
+        more_active: false,
         animation_type: 'bounceInLeft',
-        code_tooltip: "Coming Soon",
-        more_tooltip: "Coming Soon"
+        tags: ['Computer Vision', 'Optical Flow', 'CNN', 'Keras']
     },
     {
         title: "Sentiment Analysis",
@@ -103,10 +109,11 @@ const work = [
         completed: 'Completed',
         c: '#009b7d',
         code_active: true,
-        more_active: true,
+        more_active: false,
         animation_type: 'bounceInRight',
         code_tooltip: "Code",
-        more_tooltip: "Coming Soon"
+        more_tooltip: "Coming Soon",
+        tags: ['NLP', 'LSTM', ' Text Classification', 'CNN', 'Keras']
     }],
 
 ];
@@ -135,8 +142,8 @@ class Projects extends React.Component{
                                     return (
                                         <Grid item xs={5}>
                                             <ScrollAnimation animateIn={item.animation_type} animateOnce>
-                                                <Card style={{height: 400}}>
-                                                    <div style={{height: 350}}>
+                                                <Card style={{height: 470}}>
+                                                    <div style={{height: 420}}>
                                                         <CardMedia
                                                             style={{height: 180, width: 'auto'}}
                                                             image={item.img}
@@ -157,32 +164,46 @@ class Projects extends React.Component{
                                                             >
                                                                 Status : <span style={{color: item.c}}>{item.completed}</span>
                                                             </Typography>
-                                                            <Typography component="p">
+                                                            <Typography component="p" style={{height: 70}}>
                                                                 {item.description}
                                                             </Typography>
+                                                            <Typography component="h3">
+                                                                Tags
+                                                            </Typography>
+                                                            {item.tags.map((s, j) => {
+                                                                return (
+                                                                    <Chip
+                                                                        label={s}
+                                                                        style={{
+                                                                            marginRight: 5,
+                                                                            height: 20,
+                                                                            borderColor: '#4885ed',
+                                                                            color: '#4885ed',
+                                                                            fontSize: 10
+                                                                        }}
+                                                                        variant="outlined"
+                                                                    />
+                                                                )
+                                                            })}
                                                         </CardContent>
                                                     </div>
                                                     <CardActions>
-                                                        <Tooltip title={item.code_tooltip}>
-                                                            <Button size="small" style={{color: '#4885ed'}} disabled={!item.code_active}>
-                                                                <a
-                                                                    href={item.code}
-                                                                    rel="noopener noreferrer"
-                                                                    target="_blank"
-                                                                    style={{color: "#4885ed", textDecoration: "none"}}>
-                                                                    Source Code
-                                                                </a>
-                                                            </Button>
-                                                        </Tooltip>
-                                                        <Tooltip title={item.more_tooltip}>
-                                                            <Button size="small"
-                                                                    style={{color: '#4885ed'}}
-                                                                    onClick={() => this.props.history.push(item.more)}
-                                                                    disabled={!item.more_active}
-                                                            >
-                                                                Learn More
-                                                            </Button>
-                                                        </Tooltip>
+                                                        <Button size="small" style={{color: '#4885ed'}} disabled={!item.code_active}>
+                                                            <a
+                                                                href={item.code}
+                                                                rel="noopener noreferrer"
+                                                                target="_blank"
+                                                                style={{color: "#4885ed", textDecoration: "none"}}>
+                                                                Source Code
+                                                            </a>
+                                                        </Button>
+                                                        <Button size="small"
+                                                                style={{color: '#4885ed'}}
+                                                                onClick={() => this.props.history.push(item.more)}
+                                                                disabled={!item.more_active}
+                                                        >
+                                                            Learn More
+                                                        </Button>
                                                     </CardActions>
                                                 </Card>
                                             </ScrollAnimation>

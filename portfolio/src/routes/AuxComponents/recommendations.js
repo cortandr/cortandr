@@ -4,6 +4,7 @@ import React from 'react';
 import './recommendations.css';
 import Fade from "@material-ui/core/Fade";
 import ScrollAnimation from 'react-animate-on-scroll';
+import Rec from './Recommendation letter for Andrea.pdf';
 
 
 
@@ -15,14 +16,15 @@ const recs = [
             "...he showed great organizational skills in his work, namely when it came to software design. " +
             "He clearly showed passion for software development and especially for the integration of cognitive tools and " +
             "machine learning techniques. ",
-        "link": "https://www.linkedin.com/in/andrea-cortoni-8a9b74116/"
+        "full_version": <p style={{color: 'black'}}>Chief Software Architect, IBM - <span><a href={"https://www.linkedin.com/in/andrea-cortoni-8a9b74116/"}>full version</a></span></p>
     },
     {
         "person": "Xiaoliang (Wendy) Gong ",
         "description": "Ph.D, Tongji University, Shanghai, China",
         "rec": "Andrea Cortoni has proven to me his outstanding aptitude to approach any kind of scenario as well his great capability of solving problems..." +
             "Andrea really impressed me with his knowledge, skill and dedication to his work.",
-        "link": "https://www.linkedin.com/in/andrea-cortoni-8a9b74116/"
+        "full_version": <p style={{color: 'black'}}>CPh.D, Tongji University, Shanghai, China - <span><a href={Rec} rel="noopener noreferrer" target="_blank">full version</a></span></p>
+
     },
 ];
 
@@ -67,7 +69,7 @@ class Recommendations extends React.Component{
                                                 <Grid container justify={'center'}>
                                                     <Grid item xs={8}>
                                                         <h5 style={{color: '#4885ed'}}>{r.person}</h5>
-                                                        <p style={{color: 'black'}}>{r.description} - <span><a href={r.link}>full version</a></span></p>
+                                                        {r.full_version}
                                                     </Grid>
                                                 </Grid>
                                             </Carousel.Caption>

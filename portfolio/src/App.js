@@ -8,6 +8,8 @@ import About from './routes/About';
 import MAS from './routes/projects/masdrl/masdrl';
 import DOTSBOXES from './routes/projects/dots/dots';
 import ImageAI from './routes/projects/imageAI/ImageAI';
+import AtomVim from './routes/projects/vim/AtomVim';
+
 
 function App() {
     return (
@@ -20,6 +22,7 @@ function App() {
                 <Route path="/masdrl" component={MAS} />
                 <Route path="/dots" component={DOTSBOXES} />
                 <Route path="/imageai" component={ImageAI} />
+                <Route path='/viw' component={AtomVim}/>
             </Router>
         </Grid>
     );

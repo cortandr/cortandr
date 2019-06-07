@@ -55,7 +55,7 @@ class Footer extends React.Component{
                     </Grid>
                     <Grid item xs={6}>
                         <p className={'update'}>
-                            Last updated on {month} {day}th {year}
+                            Last updated on June 7th 2019
                         </p>
                         <SocialMediaIcons
                             icons={socialMediaIcons}

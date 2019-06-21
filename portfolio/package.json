@@ -9,6 +9,7 @@
     "bootstrap": "^4.3.1",
     "gh-pages": "^2.0.1",
     "intersection-observer": "^0.6.0",
+    "material-ui-responsive-drawer": "^1.19.4",
     "mdbreact": "^4.15.0",
     "react": "^16.8.6",
     "react-animate-on-scroll": "^2.1.5",

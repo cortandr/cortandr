@@ -6,5 +6,21 @@
 }
 
 .navtext {
-    font-family: 'Roboto Slab', 'regular 400'
+    font-family: 'Roboto Slab', 'regular 400';
+    cursor: pointer;
+}
+
+@media screen and (min-width: 600px) {
+    #mobile_bar {
+        display: None
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #mobile_bar {
+        display: flex;
+    }
+    #full_bar {
+        display: None;
+    }
 }

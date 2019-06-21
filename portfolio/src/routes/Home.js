@@ -5,6 +5,7 @@ import Pic from './local_images/AC_PHOTO.jpg';
 import scrollToComponent from 'react-scroll-to-component';
 import Particles from 'react-particles-js';
 import './fonts.css';
+import './home.css';
 import SocialMediaIcons from "react-social-media-icons";
 import './AuxComponents/footer.css';
 import ScrollAnimation from 'react-animate-on-scroll';
@@ -44,9 +45,10 @@ class Home extends React.Component{
         const work_list = ['mas', 'dots', 'viw', 'MovieRec', 'SpeedPred'];
 
         return (
-            <Grid container justify={'center'} style={{overflowY: 'hidden'}}>
+            <Grid container justify={'center'} style={{overflowY: 'hidden', overflowX: 'hidden', height: '100vh', width: '100%'}}>
                 <Navigation/>
-                <div style={{width: '100%', height: '100vh', top: 0, left: 0, position: 'absolute', overflowY: 'hidden'}}>
+                <div id={'particle_background'}
+                    style={{width: '100%', height: '100vh', top: 0, left: 0, position: 'absolute', overflowY: 'hidden'}}>
                     <Particles
                         params={{
                             retina_detect: true,
@@ -80,32 +82,44 @@ class Home extends React.Component{
                         position: 'relative',
                         marginLeft: '200px', marginRight: '200px'
                     }}>
-                    <Grid container justify={'center'}>
-                        <Grid item xs={8} style={{textAlign: 'left'}}>
-                            <Grid container alignItems={'vertical'} style={{marginTop: 260}}>
-                                <Grid item style={{height: 70, marginTop: 30}}>
+                    <Grid container justify={'center'} id={'profile_img_mobile'}>
+                        <Grid item xs={7} alignContent={'center'}>
+                            <ScrollAnimation animateIn={'zoomIn'}>
+                                <img
+                                    src={Pic}
+                                    alt={'pic'}
+                                    height={200}
+                                    width={200}
+                                    style={{
+                                        borderRadius: '50%',
+                                        // position: "absolute"
+                                        marginTop: 20,
+                                    }}
+                                />
+                            </ScrollAnimation>
+                        </Grid>
+                    </Grid>
+                    <Grid container justify={'center'} id={'bio'}>
+                        <Grid item xs={12} sm={8}>
+                            <Grid container alignItems={'vertical'} id={'home_text'}>
+                                <Grid item className={'title_mobile_item'}>
                                     <ScrollAnimation animateIn={'flipInX'}>
                                         <h1
-                                            className={'maintitle'}
+                                            className={'maintitle title_mobile'}
                                             style={{
-                                            color: '#4885ed',
-                                            fontSize: 40,
+                                                color: '#4885ed'
                                         }}>
                                             Ciao, I'm Andrea.</h1>
                                     </ScrollAnimation>
                                 </Grid>
                                 <Grid item>
                                     <ScrollAnimation animateIn={'flipInX'}>
-                                    <p style={{
-                                        fontSize: 20,
-                                    }}>
+                                    <p className={'description'}>
                                         I'm a Software Engineer with a strong passion for Machine Learning and its incredible potential.
                                     </p>
                                     </ScrollAnimation>
                                     <ScrollAnimation animateIn={'flipInX'}>
-                                    <p style={{
-                                        fontSize: 15,
-                                    }}>
+                                    <p className={'experience'}>
                                         Former Software Engineering Intern at
                                         <span style={{fontSize: 20, color: '#cc0000'}}> TESLA </span>,
                                         <span style={{fontSize: 20, color: '#006699'}}> IBM</span>,
@@ -132,6 +146,7 @@ class Home extends React.Component{
                                     alt={'pic'}
                                     height={300}
                                     width={300}
+                                    id={'profile_img'}
                                     style={{
                                         borderRadius: '50%',
                                         marginTop: 250,
@@ -142,8 +157,8 @@ class Home extends React.Component{
                         </Grid>
                     </Grid>
                     <Grid container justify={'center'} style={{height: 10}}>
-                        <Grid item xs={2} style={{textAlign: 'center', color: "lightgray", marginTop: 100}}>
-                            ©Andrea Cortoni
+                        <Grid item xs={6} sm={2} className={'copyright'} style={{textAlign: 'center', color: "lightgray"}}>
+                            © Andrea Cortoni
                         </Grid>
                     </Grid>
                 </Grid>

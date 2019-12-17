@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3b1938421cc42e484d2e6423e5fea46d",
+    "revision": "6c71bc4657d94a6eaa9872567b0668cf",
     "url": "/portfolio/index.html"
   },
   {
@@ -8,16 +8,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/portfolio/static/css/2.38750c1c.chunk.css"
   },
   {
-    "revision": "fb703f6d266348554695",
-    "url": "/portfolio/static/css/main.ea07df2f.chunk.css"
+    "revision": "d814d3567006b9729456",
+    "url": "/portfolio/static/css/main.e52e9dc8.chunk.css"
   },
   {
     "revision": "a8270261d6233d7d239b",
     "url": "/portfolio/static/js/2.d2bc29e7.chunk.js"
   },
   {
-    "revision": "fb703f6d266348554695",
-    "url": "/portfolio/static/js/main.3b7a88d8.chunk.js"
+    "revision": "d814d3567006b9729456",
+    "url": "/portfolio/static/js/main.6a6c302e.chunk.js"
   },
   {
     "revision": "53ebc025fca807d4dbea",
@@ -28,8 +28,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/portfolio/static/media/AC_PHOTO.f819f7c7.jpg"
   },
   {
-    "revision": "c462adb24bd2f17932b7463fc9112281",
-    "url": "/portfolio/static/media/AndreaCortoniCV.c462adb2.pdf"
+    "revision": "46c4b1d422ca4cf0f465029d35470339",
+    "url": "/portfolio/static/media/AndreaCortoniCV.46c4b1d4.pdf"
   },
   {
     "revision": "4f8d41cfdfc415f5f61ff7187fbafb99",
@@ -68,6 +68,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/portfolio/static/media/distribution.cbe37454.png"
   },
   {
+    "revision": "b2aa5bb79ae1bfc539c8c5c55953b674",
+    "url": "/portfolio/static/media/doc.b2aa5bb7.jpg"
+  },
+  {
     "revision": "f1d9cdc58580e0f865944ad122684893",
     "url": "/portfolio/static/media/dots.f1d9cdc5.png"
   },
@@ -90,10 +94,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "8c7ccda4bf8a6a09da1d4487ccf4cf90",
     "url": "/portfolio/static/media/sentiment.8c7ccda4.jpg"
-  },
-  {
-    "revision": "567445080670a40350ad91ff02d0ec37",
-    "url": "/portfolio/static/media/speed.56744508.jpg"
   },
   {
     "revision": "a8ac303214e656088445125c3481db5c",

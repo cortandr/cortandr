@@ -7,7 +7,7 @@
     "@material-ui/core": "^3.9.3",
     "@material-ui/icons": "^3.0.2",
     "bootstrap": "^4.3.1",
-    "gh-pages": "^2.0.1",
+    "gh-pages": "^5.0.0",
     "intersection-observer": "^0.6.0",
     "material-ui-responsive-drawer": "^1.19.4",
     "mdbreact": "^4.15.0",
